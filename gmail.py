@@ -35,7 +35,7 @@ class API:
                 token.write(self.creds.to_json())
         self.service = build('gmail', 'v1', credentials=self.creds)
 
-    def list_messages(self, max_results=5):
+    def list_messages(self, max_results: int = 5) -> list:
         """Lists the most recent message IDs from the user's inbox.
         
         Args:
@@ -58,7 +58,7 @@ class API:
         """
         return self.creds and self.creds.valid
 
-    def send_email(self, to, subject, body):
+    def send_email(self, to: str, subject: str, body: str) -> dict:
         """Sends an email using the Gmail API.
         
         Args:
