@@ -44,7 +44,9 @@ Google provides an official Python library:
 
 Install them using:
 
+```bash
 pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+```
 
 ---
 
@@ -72,24 +74,29 @@ Before Python code can read or send Gmail messages, it has to prove to Google th
 
 ## Inbox Access (Reading Emails)
 
-Use Gmail API methods to access the inbox.
+Use Gmail API methods to access the inbox
 
 ### Sample Method: Read Emails
 
+```python
 service.users().messages().list(userId='me', labelIds=['INBOX'], maxResults=10).execute()
+```
 
 This returns message IDs. To get content:
 
+```python
 service.users().messages().get(userId='me', id=message_id, format='full').execute()
+```
 
 ---
 
 ## Sending Emails
 
-Use MIME (Multipurpose Internet Mail Extensions) and Gmail API to construct and send an email.
+Use MIME (Multipurpose Internet Mail Extensions) and Gmail API to construct and send an email
 
 ### Example:
 
+```python
 import base64
 from email.mime.text import MIMEText
 
@@ -101,6 +108,7 @@ raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
 body = {'raw': raw}
 
 service.users().messages().send(userId='me', body=body).execute()
+```
 
 ---
 
@@ -124,8 +132,50 @@ service.users().messages().send(userId='me', body=body).execute()
 
 ---
 
+## Getting Started
+
+Follow these steps to set up your development environment:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/austin-becton-enterprises/smolmail.git
+cd smolmail
+```
+
+### 2. Create and Activate Virtual Environment
+
+- On macOS/Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+- On Windows (Command Prompt):
+
+```bash
+py -m venv .venv
+.venv\Scripts\activate.bat
+```
+
+- On Windows (PowerShell):
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
 ## Resources
 
 - https://developers.google.com/workspace/gmail/api/quickstart/python  
 - https://github.com/googleapis/google-api-python-client  
-- https://developers.google.com/identity/protocols/oauth2
+- https://developers.google.com/identity/protocols/oauth2 .
