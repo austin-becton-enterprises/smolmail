@@ -74,7 +74,7 @@ Before Python code can read or send Gmail messages, it has to prove to Google th
 
 ## Inbox Access (Reading Emails)
 
-Use Gmail API methods to access the inbox
+Use Gmail API methods to access the inbox.
 
 ### Sample Method: Read Emails
 
@@ -92,7 +92,7 @@ service.users().messages().get(userId='me', id=message_id, format='full').execut
 
 ## Sending Emails
 
-Use MIME (Multipurpose Internet Mail Extensions) and Gmail API to construct and send an email
+Use MIME (Multipurpose Internet Mail Extensions) and Gmail API to construct and send an email.
 
 ### Example:
 
@@ -178,4 +178,4 @@ pip install -r requirements.txt
 
 - https://developers.google.com/workspace/gmail/api/quickstart/python  
 - https://github.com/googleapis/google-api-python-client  
-- https://developers.google.com/identity/protocols/oauth2 .
+- https://developers.google.com/identity/protocols/oauth2 
