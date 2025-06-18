@@ -7,11 +7,11 @@ Rather than
 - #comment In The Code
 It is prefered to 
 - """
-      Comment In The Code"
+      Comment In The Code
   """
 Makes the code look neater and highlights comments.
 
-### General Python Naming Guidelines
+### General Python Naming Guidelinesgit 
 - Be consistent across the project or codebase.
 - Use descriptive, readable names over short or cryptic ones.
 - Use English words unless localization is required.
