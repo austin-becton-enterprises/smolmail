@@ -1,7 +1,7 @@
 # main_tools.py
 
 from gmail import API
-from smolmail.gmail_service import read_most_recent_emails, send_email
+from gmail_service import read_most_recent_emails, send_email
 
 def test_read_email(service):
     # Test reading unread emails using the gmail_service function
