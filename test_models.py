@@ -8,21 +8,44 @@ from contact_template_models import (
     update_template,
     delete_template
 )
+from mock_data import get_dummy_contacts, get_dummy_templates
 
-# === Test Contact CRUD ===
+# === Load and test dummy contacts ===
 print("=== Contact Tests ===")
-print(create_contact(1, "Alice Smith", "alice@example.com"))
+contacts = get_dummy_contacts()
+for contact in contacts:
+    print(create_contact(
+        contact_id=contact["contact_id"],
+        name=contact["name"],
+        email=contact["email"],
+        phone=contact["phone"]
+    ))
+    print(read_contact(contact["contact_id"]))
+
+# Test update on one contact
+print(update_contact(1, phone="999-9999"))
 print(read_contact(1))
-print(update_contact(1, phone="555-1234"))
-print(read_contact(1))
+
+# Test delete
 print(delete_contact(1))
 print(read_contact(1))  # should show not found
 
-# === Test Template CRUD ===
+# === Load and test dummy templates ===
 print("\n=== Template Tests ===")
-print(create_template(101, "Welcome", "Welcome to Our Service", "Hi {name}, welcome to our service!"))
+templates = get_dummy_templates()
+for template in templates:
+    print(create_template(
+        template_id=template["template_id"],
+        title=template["title"],
+        subject=template["subject"],
+        body=template["body"]
+    ))
+    print(read_template(template["template_id"]))
+
+# Test update on one template
+print(update_template(101, subject="Updated Subject", body="Updated body message"))
 print(read_template(101))
-print(update_template(101, subject="Updated Subject Line", body="Hello {name}, glad to have you onboard!"))
-print(read_template(101))
+
+# Test delete
 print(delete_template(101))
 print(read_template(101))  # should show not found
