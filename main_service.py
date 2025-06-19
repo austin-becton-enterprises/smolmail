@@ -1,11 +1,11 @@
 # main_tools.py
 
 from gmail import API
-from gmail_tools import read_email, send_email
+from smolmail.gmail_service import read_most_recent_emails, send_email
 
 def test_read_email(service):
-    # Test reading unread emails using the gmail_tools function
-    emails = read_email(service)
+    # Test reading unread emails using the gmail_service function
+    emails = read_most_recent_emails(service)
     if not emails:
         print("No unread emails found.")
     else:
@@ -16,11 +16,12 @@ def test_read_email(service):
             print(f"  Snippet: {email['snippet']}")
             print("---")
 
+
 def test_send_email(service):
     # Prompt for email address to send a test message
     to = input("Enter your email address to send a test email: ").strip()
-    subject = "AI Test Email via gmail_tools"
-    body = "This is a test email sent using the new gmail_tools module."
+    subject = "AI Test Email via gmail_service"
+    body = "This is a test email sent using the new gmail_service module."
     
     confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
     if confirmation == 'y':
