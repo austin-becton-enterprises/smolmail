@@ -16,15 +16,17 @@ class Contact:
 
 # Template model
 class Template:
-    def __init__(self, template_id, title, body):
+    def __init__(self, template_id, title, subject, body):
         self.template_id = template_id
         self.title = title
+        self.subject = subject
         self.body = body
 
     def to_dict(self):
         return {
             "template_id": self.template_id,
             "title": self.title,
+            "subject": self.subject,
             "body": self.body
         }
 
@@ -63,10 +65,10 @@ def delete_contact(contact_id):
     return "Contact not found."
 
 # CRUD for Template
-def create_template(template_id, title, body):
+def create_template(template_id, title, subject, body):
     if template_id in mock_templates_db:
         return f"Template with ID {template_id} already exists."
-    template = Template(template_id, title, body)
+    template = Template(template_id, title, subject, body)
     mock_templates_db[template_id] = template
     return f"Template '{title}' created."
 
@@ -74,12 +76,14 @@ def read_template(template_id):
     template = mock_templates_db.get(template_id)
     return template.to_dict() if template else "Template not found."
 
-def update_template(template_id, title=None, body=None):
+def update_template(template_id, title=None, subject=None, body=None):
     template = mock_templates_db.get(template_id)
     if not template:
         return "Template not found."
     if title:
         template.title = title
+    if subject:
+        template.subject = subject
     if body:
         template.body = body
     return f"Template {template_id} updated."

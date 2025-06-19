@@ -20,9 +20,9 @@ print(read_contact(1))  # should show not found
 
 # === Test Template CRUD ===
 print("\n=== Template Tests ===")
-print(create_template(101, "Welcome", "Hi {name}, welcome to our service!"))
+print(create_template(101, "Welcome", "Welcome to Our Service", "Hi {name}, welcome to our service!"))
 print(read_template(101))
-print(update_template(101, body="Hello {name}, glad to have you onboard!"))
+print(update_template(101, subject="Updated Subject Line", body="Hello {name}, glad to have you onboard!"))
 print(read_template(101))
 print(delete_template(101))
 print(read_template(101))  # should show not found
