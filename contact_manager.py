@@ -1,18 +1,23 @@
 from universal_crud import create, read, update, delete
 
+#Constants for property keys 
+PROPERTY_KEY_ID = "id"
+PROPERTY_KEY_NAME = "name"
+PROPERTY_KEY_EMAIL = "email" 
+
 #Simple Contact data model 
 class Contact: 
-    def __init__ (self, contact_id, name, email):
+    def __init__ (self, contact_id: int, name: str, email:str) -> None:
         #initialize with user ID, Name, and Email
-        self.id = contact_id
-        self.name = name
-        self.email = email 
+        self.id: int = contact_id
+        self.name: str = name
+        self.email:str = email 
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         #return user data as a dictionary 
-        return {"id": self.id, "name": self.name, "email": self.email}
+        return {PROPERTY_KEY_ID: self.id, PROPERTY_KEY_NAME: self.name, PROPERTY_KEY_EMAIL: self.email}
 
-contact_dict = {} 
+contact_dict: dict[int, Contact]={}
 
 def create_contact (contact): 
     success, result = create(contact_dict, contact)
