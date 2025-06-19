@@ -1,13 +1,28 @@
-from contact_template_models import *
+from contact_template_models import (
+    create_contact,
+    read_contact,
+    update_contact,
+    delete_contact,
+    create_template,
+    read_template,
+    update_template,
+    delete_template
+)
 
-# Create and add contacts
-contact1 = Contact(contact_id=1, name="Alice Smith", email="alice@example.com")
-create_contact(contact1)
+# === Test Contact CRUD ===
+print("=== Contact Tests ===")
+print(create_contact(1, "Alice Smith", "alice@example.com"))
+print(read_contact(1))
+print(update_contact(1, phone="555-1234"))
+print(read_contact(1))
+print(delete_contact(1))
+print(read_contact(1))  # should show not found
 
-# Create and add templates
-template1 = Template(template_id=101, title="Welcome", body="Hi {name}, welcome to our service!")
-create_template(template1)
-
-# Test read
-print(read_contact(1).__dict__)
-print(read_template(101).__dict__)
+# === Test Template CRUD ===
+print("\n=== Template Tests ===")
+print(create_template(101, "Welcome", "Hi {name}, welcome to our service!"))
+print(read_template(101))
+print(update_template(101, body="Hello {name}, glad to have you onboard!"))
+print(read_template(101))
+print(delete_template(101))
+print(read_template(101))  # should show not found
