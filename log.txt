@@ -1,0 +1,39 @@
+2025-06-24 12:02:15 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-24 12:02:15 - INFO - Fetching unread messages...
+2025-06-24 12:02:16 - INFO - Read message: Subject='Test for Read and Write', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-24 12:02:16 - INFO - Retrieved 1 unread emails.
+2025-06-24 12:02:16 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 20, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-06-24 12:03:09 - INFO - Email sent to adityanepal08@gmail.com | Message ID: 197a2add2c08cd6c
+2025-06-24 12:03:09 - INFO - Email sent successfully to adityanepal08@gmail.com.
+2025-06-24 12:03:41 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-24 12:03:41 - INFO - Fetching unread messages...
+2025-06-24 12:03:42 - INFO - Read message: Subject='Test for Read and Write', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-24 12:03:42 - INFO - Retrieved 1 unread emails.
+2025-06-24 12:03:42 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 21, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-06-24 12:04:20 - INFO - Email send cancelled by user.
+2025-06-24 12:04:22 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-24 12:04:22 - INFO - Fetching unread messages...
+2025-06-24 12:04:23 - INFO - Read message: Subject='Test for Read and Write', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-24 12:04:23 - INFO - Retrieved 1 unread emails.
+2025-06-24 12:04:36 - INFO - Email sent to customer1.becton@gmail.com | Message ID: 197a2af24ebde192
+2025-06-24 12:04:36 - INFO - Email sent successfully to customer1.becton@gmail.com.
+2025-06-24 12:07:58 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-24 12:07:58 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-24 12:07:58 - INFO - Fetching unread messages...
+2025-06-24 12:07:58 - INFO - Fetching unread messages...
+2025-06-24 12:07:59 - INFO - Read message: Subject='Test for Read and Write', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-24 12:07:59 - INFO - Read message: Subject='Test for Read and Write', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-24 12:07:59 - INFO - Retrieved 1 unread emails.
+2025-06-24 12:07:59 - INFO - Retrieved 1 unread emails.
+2025-06-24 12:08:05 - INFO - Email send cancelled by user.
+2025-06-24 12:08:05 - INFO - Email send cancelled by user.

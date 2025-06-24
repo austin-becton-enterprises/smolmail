@@ -1,6 +1,6 @@
 # gmail_service.py
 
-import logging
+from log_config import setup_logger
 import base64
 from email.mime.text import MIMEText
 from typing import List, Dict, Optional
@@ -29,14 +29,14 @@ LABEL_INBOX = 'INBOX'
 LABEL_UNREAD = 'UNREAD'
 
 # Logging configuration
-logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)s - %(message)s')
+logger = setup_logger()
 
 def read_most_recent_emails(service: Resource, label_ids: List[str] = [LABEL_INBOX, LABEL_UNREAD], max_results: int = 5) -> List[Dict]:
     """
     Fetches recent emails based on label filters.
     """
     try:
-        logging.info("Fetching unread messages...")
+        logger.info("Fetching unread messages...")
         response = service.users().messages().list(
             userId=USER_ID_ME,
             labelIds=label_ids,
@@ -45,7 +45,7 @@ def read_most_recent_emails(service: Resource, label_ids: List[str] = [LABEL_INB
 
         messages = response.get(KEY_MESSAGES, [])
         if not messages:
-            logging.info("No unread messages found.")
+            logger.info("No unread messages found.")
             return []
 
         email_data = []
@@ -56,7 +56,7 @@ def read_most_recent_emails(service: Resource, label_ids: List[str] = [LABEL_INB
             sender = next((h['value'] for h in headers if h['name'] == HEADER_FROM), "(Unknown Sender)")
             snippet = msg_detail.get(KEY_SNIPPET, "")
 
-            logging.info(f"Read message: Subject='{subject}', From='{sender}'")
+            logger.info(f"Read message: Subject='{subject}', From='{sender}'")
             email_data.append({
                 KEY_ID: msg[KEY_ID],
                 KEY_SUBJECT: subject,
@@ -67,7 +67,7 @@ def read_most_recent_emails(service: Resource, label_ids: List[str] = [LABEL_INB
         return email_data
 
     except HttpError as error:
-        logging.error(f"Error reading email: {error}")
+        logger.error(f"Error reading email: {error}")
         return []
 
 def create_message(to: str, subject: str, body: str) -> Dict[str, str]:
@@ -87,8 +87,8 @@ def send_email(service: Resource, to: str, subject: str, body: str) -> Optional[
     try:
         message = create_message(to, subject, body)
         sent = service.users().messages().send(userId=USER_ID_ME, body=message).execute()
-        logging.info(f"Email sent to {to} | Message ID: {sent[KEY_ID]}")
+        logger.info(f"Email sent to {to} | Message ID: {sent[KEY_ID]}")
         return sent
     except HttpError as error:
-        logging.error(f"Error sending email to {to}: {error}")
+        logger.error(f"Error sending email to {to}: {error}")
         return None
