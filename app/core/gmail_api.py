@@ -7,8 +7,7 @@ import os.path
 
 
 class API:
-    SCOPES = ['https://www.googleapis.com/auth/gmail.readonly', 
-              'https://www.googleapis.com/auth/gmail.send']
+    SCOPES = ['https://www.googleapis.com/auth/gmail.send','https://www.googleapis.com/auth/gmail.modify']
 
     def __init__(self, creds_path='credentials.json', token_path='token.json'):
         """Initializes the API class with credentials and token file paths.
