@@ -1,5 +1,3 @@
-# gmail.py
-
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
@@ -7,7 +5,7 @@ import os.path
 
 
 class API:
-    SCOPES = ['https://www.googleapis.com/auth/gmail.readonly', 
+    SCOPES = ['https://www.googleapis.com/auth/gmail.readonly',
               'https://www.googleapis.com/auth/gmail.send']
 
     def __init__(self, creds_path='credentials.json', token_path='token.json'):
@@ -22,53 +20,41 @@ class API:
 
     def authenticate(self):
         """Authenticates the user using OAuth 2.0.
-        If token.json exists, it loads credentials from there.
-        Otherwise, it starts a login flow and saves the new token.
-        Then builds a Gmail API service instance.
+        Refreshes or recreates token if needed, then builds Gmail API service.
         """
         if os.path.exists(self.token_path):
             self.creds = Credentials.from_authorized_user_file(self.token_path, self.SCOPES)
+            if not self.creds.valid:
+                print("🔄 Token invalid or expired. Re-authenticating...")
+                flow = InstalledAppFlow.from_client_secrets_file(self.creds_path, self.SCOPES)
+                self.creds = flow.run_local_server(port=0)
+                with open(self.token_path, 'w') as token:
+                    token.write(self.creds.to_json())
         else:
+            print("🔐 No token found. Authenticating for the first time...")
             flow = InstalledAppFlow.from_client_secrets_file(self.creds_path, self.SCOPES)
             self.creds = flow.run_local_server(port=0)
             with open(self.token_path, 'w') as token:
                 token.write(self.creds.to_json())
+
         self.service = build('gmail', 'v1', credentials=self.creds)
 
     def list_messages(self, max_results: int = 5) -> list:
-        """Lists the most recent message IDs from the user's inbox.
-        
-        Args:
-            max_results (int): Number of messages to retrieve.
-        
-        Returns:
-            list: A list of message ID dictionaries.
-        """
+        """Lists the most recent message IDs from the user's inbox."""
         result = self.service.users().messages().list(userId='me', maxResults=max_results).execute()
         return result.get('messages', [])
-    
+
     def get_message(self, message_id: str):
-        """Retrieves the full content of a specific email by its message ID.
-        """
+        """Retrieves the full content of a specific email by its message ID."""
         message = self.service.users().messages().get(userId='me', id=message_id, format='full').execute()
         return message
 
     def is_authenticated(self) -> bool:
-        """Checks whether the current credentials are valid and not expired.
-        """
+        """Checks whether the current credentials are valid and not expired."""
         return self.creds and self.creds.valid
 
     def send_email(self, to: str, subject: str, body: str) -> dict:
-        """Sends an email using the Gmail API.
-        
-        Args:
-            to (str): Recipient email address.
-            subject (str): Subject line for the email.
-            body (str): Body content of the email.
-        
-        Returns:
-            dict: The sent message object.
-        """
+        """Sends an email using the Gmail API."""
         import base64
         from email.mime.text import MIMEText
 
@@ -81,7 +67,7 @@ class API:
 
         sent_message = self.service.users().messages().send(userId='me', body=body).execute()
         return sent_message
-    
+
     # def send_email_html(self, to: str, subject: str, html_body: str):
     #     """
     #     Sends an email with HTML content.
@@ -98,3 +84,8 @@ class API:
     #
     #     sent_message = self.service.users().messages().send(userId='me', body=body).execute()
     #     return sent_message
+
+
+if __name__ == '__main__':
+    gmail = API()
+    print("Authenticated:", gmail.is_authenticated())
