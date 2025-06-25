@@ -22,14 +22,15 @@ def test_read_email(service):
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
+                test_send_email(service,email['From'])
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
 
 
-def test_send_email(service):
+def test_send_email(service,to):
     try:
-        to = input("Enter your email address to send a test email: ").strip()
+        # to = input("Enter your email address to send a test email: ").strip()
         subject = "AI Test Email via gmail_service"
         body = "This is a test email sent using the new gmail_service module."
         
@@ -59,4 +60,3 @@ if __name__ == '__main__':
 
     # Run tests
     test_read_email(service)
-    test_send_email(service)
