@@ -1,36 +1,24 @@
-# Code Overview: Gmail Service and Main Test Runner
+# Code Overview and Workflow
 
-This document explains the purpose and structure of two key modules in the system: `gmail_service.py` and `main_service.py`. These files are responsible for handling Gmail integration and testing basic email functionality. They serve as the foundation for enabling the AI agent to read incoming emails and send responses using email templates.
-
----
-
-## `gmail_service.py` — Overview
-
-This module contains all the core logic needed to interact with the Gmail API for reading and sending emails. It provides a simplified interface that other parts of the system — such as the AI agent — can call to fetch email data and send replies.
-
-### Key Responsibilities:
-- Connect to Gmail using an authenticated service
-- Fetch recent unread emails
-- Build MIME-format email messages and encode them
-- Send emails using the Gmail API
-- Handle errors returned by the Gmail API
-
-
-### Functions:
-
-
-
+This document explains the structure and function of the core modules in the Gmail AI service. It is intended to help new developers understand how the system works, how components interact, and where to implement changes or add features.
 
 ---
 
-## `main_service.py` — Overview
+## File: `app/core/gmail_api.py`
 
-This script is used to manually test the Gmail functionality provided in `gmail_service.py`. It allows a developer to run the system interactively to verify that reading and sending emails work as expected.
+### Purpose:
+Handles the initial setup and authentication of the Gmail API using OAuth 2.0. This class returns a service object that can be used for email operations (read/send).
 
-### Key Responsibilities:
-- Authenticate the Gmail API connection
-- Provide command-line tools to test email reading
-- Prompt the user to send a test email
-- Print the results of these operations
+### Key Class:
+- **`API`**  
+  - Sets scopes for reading and sending email
+  - Authenticates using saved token or OAuth login
+  - Provides access to Gmail API methods
 
-### Functions:
+### Key Methods:
+- `authenticate()`: Authenticates the user and saves credentials
+- `list_messages(max_results)`: Lists recent message IDs
+- `get_message(message_id)`: Gets full content of a specific message
+- `send_email(to, subject, body)`: Sends an email using the Gmail API
+
+---
