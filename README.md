@@ -179,3 +179,7 @@ pip install -r requirements.txt
 - https://developers.google.com/workspace/gmail/api/quickstart/python  
 - https://github.com/googleapis/google-api-python-client  
 - https://developers.google.com/identity/protocols/oauth2 
+
+
+## Testing
+- python -m unittest app.tests.test_unit_gmail
