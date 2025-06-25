@@ -156,3 +156,12 @@
 2025-06-25 15:50:24 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8a43b6d4ca93
 2025-06-25 15:50:24 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
 2025-06-25 15:50:24 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 15:57:33 - INFO - Fetching unread messages...
+2025-06-25 15:57:33 - ERROR - Error reading email: <HttpError <MagicMock name='mock.status' id='4399763136'> "Mocked Error">
+2025-06-25 15:57:33 - INFO - Fetching unread messages...
+2025-06-25 15:57:33 - INFO - No unread messages found.
+2025-06-25 15:57:33 - INFO - Fetching unread messages...
+2025-06-25 15:57:33 - INFO - Read message: Subject='Subject msg1', From='sendermsg1@example.com'
+2025-06-25 15:57:33 - INFO - Read message: Subject='Subject msg2', From='sendermsg2@example.com'
+2025-06-25 15:57:33 - ERROR - Error sending email to test@example.com: <HttpError <MagicMock name='mock.status' id='4399759440'> "Mocked Send Error">
+2025-06-25 15:57:33 - INFO - Email sent to test@example.com | Message ID: 123
