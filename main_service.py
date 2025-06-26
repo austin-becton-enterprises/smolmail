@@ -1,3 +1,6 @@
+#Testubg email_reply
+from email_reply import general_email_reply, ai_email_reply
+
 # main_tools.py
 
 from gmail import API
@@ -18,14 +21,23 @@ def test_read_email(service):
 
 
 def test_send_email(service):
+  
+   
     # Prompt for email address to send a test message
-    to = input("Enter your email address to send a test email: ").strip()
-    subject = "AI Test Email via gmail_service"
-    body = "This is a test email sent using the new gmail_service module."
+    to = input("Enter email address to send a test email: ").strip()
+
+    #Inputs
+    name = input ("Enter recipient name (optional): ").strip() or None
+    issue = input("Enter issue (optional): ").strip() or None
+    additional_info = input("Any additional info (optional): ").strip() or None
+
+    #Generate body using email_template
+    body = general_email_reply(name=name, issue=issue, additional_info=additional_info)
+    subject = f"Re: {issue or 'Support Request'}"
     
-    confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
+    confirmation = input(f"Send email to {to}? \n\n{body}\n\n(y/n): ").strip().lower()
     if confirmation == 'y':
-        result = send_email(service, to, subject, body)
+        result = send_email(service, to, issue, body)
         if result:
             print("Email sent successfully.")
         else:
@@ -41,5 +53,5 @@ if __name__ == '__main__':
     service = gmail.service
 
     # Run tests
-    test_read_email(service)
+    #test_read_email(service)
     test_send_email(service)
