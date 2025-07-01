@@ -765,3 +765,387 @@ google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'i
 2025-06-25 17:16:30 - INFO - No unread messages found.
 2025-06-25 17:16:30 - INFO - No unread emails found.
 2025-06-25 17:16:30 - INFO - No unread emails found.
+2025-07-01 13:46:05 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:46:05 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:46:05 - ERROR - Error reading emails: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:46:05 - ERROR - Error reading emails: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:46:55 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:46:55 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:46:55 - INFO - Fetching unread messages...
+2025-07-01 13:46:55 - INFO - Fetching unread messages...
+2025-07-01 13:46:55 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:46:55 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:46:55 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:46:55 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:46:55 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 34, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:46:55 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 34, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:47:18 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:47:18 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:47:18 - INFO - Fetching unread messages...
+2025-07-01 13:47:18 - INFO - Fetching unread messages...
+2025-07-01 13:47:19 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:47:19 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:47:19 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:47:19 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:47:19 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 34, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:47:19 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 34, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:48:29 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:48:29 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:48:29 - INFO - Fetching unread messages...
+2025-07-01 13:48:29 - INFO - Fetching unread messages...
+2025-07-01 13:48:30 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:48:30 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:48:30 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:48:30 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:48:30 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 33, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:48:30 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 33, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:49:31 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:49:31 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:49:31 - INFO - Fetching unread messages...
+2025-07-01 13:49:31 - INFO - Fetching unread messages...
+2025-07-01 13:49:32 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:49:32 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:49:32 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:49:32 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:49:32 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 38, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:49:32 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 38, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:50:37 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:50:37 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:50:37 - INFO - Fetching unread messages...
+2025-07-01 13:50:37 - INFO - Fetching unread messages...
+2025-07-01 13:50:38 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:50:38 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:50:38 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:50:38 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:50:38 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 38, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:50:38 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 38, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:51:00 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:51:00 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:51:00 - INFO - Fetching unread messages...
+2025-07-01 13:51:00 - INFO - Fetching unread messages...
+2025-07-01 13:51:01 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:51:01 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:51:01 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:51:01 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:51:01 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 38, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:51:01 - ERROR - Error sending email: Input 'snippet' should be a dictionary.
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 38, in test_send_email
+    agent = MailAgent()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/mail_agent.py", line 8, in __init__
+    tools = [MailTool()]
+             ~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 68, in new_init
+    self.validate_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/smolagents/tools.py", line 147, in validate_arguments
+    assert isinstance(input_content, dict), f"Input '{input_name}' should be a dictionary."
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Input 'snippet' should be a dictionary.
+2025-07-01 13:52:34 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:52:34 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:52:34 - INFO - Fetching unread messages...
+2025-07-01 13:52:34 - INFO - Fetching unread messages...
+2025-07-01 13:52:35 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:52:35 - INFO - Read message: Subject='', From='customer1.becton@gmail.com'
+2025-07-01 13:52:35 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:52:35 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:52:39 - INFO - AI Response: Thank you for your message. Our team is currently reviewing your message and will get back to you shortly. If you have any more questions or details to share, please feel free to.
+2025-07-01 13:52:39 - INFO - AI Response: Thank you for your message. Our team is currently reviewing your message and will get back to you shortly. If you have any more questions or details to share, please feel free to.
+2025-07-01 13:53:14 - INFO - Email sent to customer1.becton@gmail.com | Message ID: 197c71f1ec43d7b8
+2025-07-01 13:53:14 - INFO - Email sent to customer1.becton@gmail.com | Message ID: 197c71f1ec43d7b8
+2025-07-01 13:53:14 - INFO - Email sent successfully to customer1.becton@gmail.com.
+2025-07-01 13:53:14 - INFO - Email sent successfully to customer1.becton@gmail.com.
+2025-07-01 13:53:15 - INFO - Marked message 197ac5edcb68e957 as read.
+2025-07-01 13:53:15 - INFO - Marked message 197ac5edcb68e957 as read.
+2025-07-01 13:53:55 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:53:55 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:53:55 - INFO - Fetching unread messages...
+2025-07-01 13:53:55 - INFO - Fetching unread messages...
+2025-07-01 13:53:55 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 13:53:55 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 13:53:55 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:53:55 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:54:00 - INFO - AI Response: Thank you for your message. Regarding: 'ALright On Wed, Jun 25, 2025 at 3:50 PM &lt;ai.becton. 0@gmail. com&gt; wrote: This is a test email sent using the new gmail_service module.', I will get back to you shortly.
+2025-07-01 13:54:00 - INFO - AI Response: Thank you for your message. Regarding: 'ALright On Wed, Jun 25, 2025 at 3:50 PM &lt;ai.becton. 0@gmail. com&gt; wrote: This is a test email sent using the new gmail_service module.', I will get back to you shortly.
+2025-07-01 13:54:17 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c72015de4819e
+2025-07-01 13:54:17 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c72015de4819e
+2025-07-01 13:54:17 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 13:54:17 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 13:54:18 - INFO - Marked message 197a8a44ff76d147 as read.
+2025-07-01 13:54:18 - INFO - Marked message 197a8a44ff76d147 as read.
+2025-07-01 13:55:14 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:55:14 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:55:14 - INFO - Fetching unread messages...
+2025-07-01 13:55:14 - INFO - Fetching unread messages...
+2025-07-01 13:55:14 - INFO - No unread messages found.
+2025-07-01 13:55:14 - INFO - No unread messages found.
+2025-07-01 13:55:14 - INFO - No unread emails found.
+2025-07-01 13:55:14 - INFO - No unread emails found.
+2025-07-01 13:55:17 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:55:17 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:55:17 - INFO - Fetching unread messages...
+2025-07-01 13:55:17 - INFO - Fetching unread messages...
+2025-07-01 13:55:17 - INFO - No unread messages found.
+2025-07-01 13:55:17 - INFO - No unread messages found.
+2025-07-01 13:55:17 - INFO - No unread emails found.
+2025-07-01 13:55:17 - INFO - No unread emails found.
+2025-07-01 13:55:32 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:55:32 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 13:55:32 - INFO - Fetching unread messages...
+2025-07-01 13:55:32 - INFO - Fetching unread messages...
+2025-07-01 13:55:32 - INFO - Read message: Subject='General Questioning', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 13:55:32 - INFO - Read message: Subject='General Questioning', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 13:55:32 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:55:32 - INFO - Retrieved 1 unread emails.
+2025-07-01 13:55:34 - INFO - AI Response: Thank you for your message. Regarding your request for an update on the current status of the company, I will get back to you shortly.
+2025-07-01 13:55:34 - INFO - AI Response: Thank you for your message. Regarding your request for an update on the current status of the company, I will get back to you shortly.
+2025-07-01 13:55:41 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c721592ac2685
+2025-07-01 13:55:41 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c721592ac2685
+2025-07-01 13:55:41 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 13:55:41 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 13:55:41 - INFO - Marked message 197c721116ba86f6 as read.
+2025-07-01 13:55:41 - INFO - Marked message 197c721116ba86f6 as read.
+2025-07-01 14:01:33 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:01:33 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:01:33 - INFO - Fetching unread messages...
+2025-07-01 14:01:33 - INFO - Fetching unread messages...
+2025-07-01 14:01:34 - INFO - No unread messages found.
+2025-07-01 14:01:34 - INFO - No unread messages found.
+2025-07-01 14:01:34 - INFO - No unread emails found.
+2025-07-01 14:01:34 - INFO - No unread emails found.
+2025-07-01 14:02:22 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:02:22 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:02:22 - INFO - Fetching unread messages...
+2025-07-01 14:02:22 - INFO - Fetching unread messages...
+2025-07-01 14:02:22 - INFO - No unread messages found.
+2025-07-01 14:02:22 - INFO - No unread messages found.
+2025-07-01 14:02:22 - INFO - No unread emails found.
+2025-07-01 14:02:22 - INFO - No unread emails found.
+2025-07-01 14:02:27 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:02:27 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:02:27 - INFO - Fetching unread messages...
+2025-07-01 14:02:27 - INFO - Fetching unread messages...
+2025-07-01 14:02:27 - INFO - No unread messages found.
+2025-07-01 14:02:27 - INFO - No unread messages found.
+2025-07-01 14:02:27 - INFO - No unread emails found.
+2025-07-01 14:02:27 - INFO - No unread emails found.
+2025-07-01 14:02:42 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:02:42 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:02:42 - INFO - Fetching unread messages...
+2025-07-01 14:02:42 - INFO - Fetching unread messages...
+2025-07-01 14:02:43 - INFO - Read message: Subject='asa', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:02:43 - INFO - Read message: Subject='asa', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:02:44 - INFO - Read message: Subject='sadas', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:02:44 - INFO - Read message: Subject='sadas', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:02:44 - INFO - Retrieved 2 unread emails.
+2025-07-01 14:02:44 - INFO - Retrieved 2 unread emails.
+2025-07-01 14:02:47 - INFO - AI Response: Thank you for your message. Regarding: 'sas Hello', I will get back to you shortly.
+2025-07-01 14:02:47 - INFO - AI Response: Thank you for your message. Regarding: 'sas Hello', I will get back to you shortly.
+2025-07-01 14:03:20 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c7285b5594a64
+2025-07-01 14:03:20 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c7285b5594a64
+2025-07-01 14:03:20 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 14:03:20 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 14:03:20 - INFO - Marked message 197c7279df559e99 as read.
+2025-07-01 14:03:20 - INFO - Marked message 197c7279df559e99 as read.
+2025-07-01 14:03:22 - INFO - AI Response: Thank you for your message. Regarding: 'HELLOW WOLAjsa', I will get back to you shortly.
+2025-07-01 14:03:22 - INFO - AI Response: Thank you for your message. Regarding: 'HELLOW WOLAjsa', I will get back to you shortly.
+2025-07-01 14:03:25 - INFO - Email send cancelled by user.
+2025-07-01 14:03:25 - INFO - Email send cancelled by user.
+2025-07-01 14:04:34 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:04:34 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:04:34 - INFO - Fetching unread messages...
+2025-07-01 14:04:34 - INFO - Fetching unread messages...
+2025-07-01 14:04:35 - INFO - Read message: Subject='sadas', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:04:35 - INFO - Read message: Subject='sadas', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:04:35 - INFO - Retrieved 1 unread emails.
+2025-07-01 14:04:35 - INFO - Retrieved 1 unread emails.
+2025-07-01 14:04:37 - INFO - AI Response: Thank you for your message. Regarding: 'HELLOW WOLAjsa', I will get back to you shortly.
+2025-07-01 14:04:37 - INFO - AI Response: Thank you for your message. Regarding: 'HELLOW WOLAjsa', I will get back to you shortly.
+2025-07-01 14:04:42 - INFO - Email send cancelled by user.
+2025-07-01 14:04:42 - INFO - Email send cancelled by user.
+2025-07-01 14:04:54 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:04:54 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-01 14:04:54 - INFO - Fetching unread messages...
+2025-07-01 14:04:54 - INFO - Fetching unread messages...
+2025-07-01 14:04:54 - INFO - Read message: Subject='sadas', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:04:54 - INFO - Read message: Subject='sadas', From='Customer1 <customer1.becton@gmail.com>'
+2025-07-01 14:04:54 - INFO - Retrieved 1 unread emails.
+2025-07-01 14:04:54 - INFO - Retrieved 1 unread emails.
+2025-07-01 14:04:56 - INFO - AI Response: Thank you for your message. Regarding: 'HELLOW WOLAjsa', I will get back to you shortly.
+2025-07-01 14:04:56 - INFO - AI Response: Thank you for your message. Regarding: 'HELLOW WOLAjsa', I will get back to you shortly.
+2025-07-01 14:05:03 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c729ed8982c42
+2025-07-01 14:05:03 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197c729ed8982c42
+2025-07-01 14:05:03 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 14:05:03 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-07-01 14:05:03 - INFO - Marked message 197c7279d04e75e2 as read.
+2025-07-01 14:05:03 - INFO - Marked message 197c7279d04e75e2 as read.

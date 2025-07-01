@@ -1,5 +1,5 @@
 # main_tools.py
-
+from app.core.mail_agent import MailAgent
 from app.core.gmail_api import API
 from app.core.gmail_facade import GmailService
 from app.utils.log_config import setup_logger
@@ -22,18 +22,24 @@ def test_read_email(gmail_service):
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
-                test_send_email(gmail_service,email['From'],email['id'])
+                test_send_email(
+                    gmail_service,
+                    to=email['From'],
+                    id=email['id'],
+                    snippet=email['snippet']
+                )
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
 
 
-def test_send_email(gmail_service,to,id):
+def test_send_email(gmail_service,to,id,snippet):
     try:
-        # to = input("Enter your email address to send a test email: ").strip()
-        subject = "AI Test Email via gmail_service"
-        body = "This is a test email sent using the new gmail_service module."
-        
+        agent = MailAgent()
+        result = agent.run({"snippet": snippet})
+        subject = "Reply from AI Assistant"
+        body = result  # Set AI result as the email body
+        logger.info(f"AI Response: {result}")
         confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
         if confirmation == 'y':
             result = gmail_service.send_email(to, subject, body)
@@ -54,7 +60,6 @@ def test_send_email(gmail_service,to,id):
 
 if __name__ == '__main__':
     print("=== Gmail Tools Test Runner ===")
-
     # Authenticate and build the service
     gmail = API()
     gmail_service = GmailService(gmail.service)
