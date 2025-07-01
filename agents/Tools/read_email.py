@@ -20,5 +20,5 @@ class EmailReader(Tool):
         # *** WE CAN EITHER GO THROUGH THEIR CODE AND MAKE SURE WE REFERENCE THE CORRECT DATA
         # *** OR WE CAN MESSAGE LIANA OR SIMRAN ABOUT IT
         
-        return 0 
+        return 0
     
