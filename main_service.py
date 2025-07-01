@@ -3,6 +3,7 @@ from app.core.mail_agent import MailAgent
 from app.core.gmail_api import API
 from app.core.gmail_facade import GmailService
 from app.utils.log_config import setup_logger
+import time
 
 logger = setup_logger()
 
@@ -26,7 +27,7 @@ def test_read_email(gmail_service):
                     gmail_service,
                     to=email['From'],
                     id=email['id'],
-                    snippet=email['snippet']
+                    snippet=email
                 )
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
@@ -36,23 +37,44 @@ def test_read_email(gmail_service):
 def test_send_email(gmail_service,to,id,snippet):
     try:
         agent = MailAgent()
-        result = agent.run({"snippet": snippet})
+        prompt = f"""
+        You are a helpful and professional assistant tasked with writing warm, engaging, and personalized email replies.
+
+        Here is the message you received:
+
+        ---
+        {snippet}
+        ---
+
+        Please write a thoughtful and polite reply addressing the sender’s message. Use a friendly tone and make the response feel human and conversational.
+
+        - Avoid generic phrases like "I will get back to you shortly. or Thank you for your message. Regarding:"
+        - Add relevant details or questions if appropriate.
+        - Sign off politely with a suitable closing.
+        - Don't give specifics about any project.
+        - Ask More Questions related to the snippets
+        - We are the Becton Team
+        - We deal with making AI Agents, Automation
+
+        Reply ONLY with the content of the email. Do NOT include any explanations or disclaimers.
+        """
+        result = agent.run({"snippet": prompt})
         subject = "Reply from AI Assistant"
         body = result  # Set AI result as the email body
         logger.info(f"AI Response: {result}")
-        confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
-        if confirmation == 'y':
-            result = gmail_service.send_email(to, subject, body)
-            if result:
-                logger.info(f"Email sent successfully to {to}.")
-                gmail_service.mark_as_read(id)
-                print("Email sent successfully.")
-            else:
-                logger.error(f"Email failed to send to {to}.")
-                print("Email failed to send.")
+        # confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
+        # if confirmation == 'y':
+        result = gmail_service.send_email(to, subject, body)
+        if result:
+            logger.info(f"Email sent successfully to {to}.")
+            gmail_service.mark_as_read(id)
+            print("Email sent successfully.")
         else:
-            logger.info("Email send cancelled by user.")
-            print("⚠️ Email send cancelled.")
+            logger.error(f"Email failed to send to {to}.")
+            print("Email failed to send.")
+        # else:
+            # logger.info("Email send cancelled by user.")
+            # print("⚠️ Email send cancelled.")
     except Exception as e:
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
@@ -65,4 +87,6 @@ if __name__ == '__main__':
     gmail_service = GmailService(gmail.service)
 
     # Run tests
-    test_read_email(gmail_service)
+    while True:
+        test_read_email(gmail_service)
+        time.sleep(5)  # Wait 5 seconds before checking again
