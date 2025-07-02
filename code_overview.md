@@ -99,7 +99,7 @@ Builds MIME message for Gmail.
 - **Returns:** Encoded message dict  
 - **Usage:**
 ```python
-service.create_message("to@example.com", "Hi", "Test message")
+service.create_message("to@example.com", "Hi", "Test message").
 ```
 
 ---
