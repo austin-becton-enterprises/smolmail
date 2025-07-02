@@ -81,6 +81,22 @@ class GmailService:
         message[KEY_SUBJECT] = subject
         raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
         return {KEY_RAW: raw}
+    
+    def mark_as_read(self, message_id: str) -> bool:
+        """
+        Marks a message as read by removing the UNREAD label.
+        """
+        try:
+            self.service.users().messages().modify(
+                userId='me',
+                id=message_id,
+                body={'removeLabelIds': ['UNREAD']}
+            ).execute()
+            logger.info(f"Marked message {message_id} as read.")
+            return True
+        except HttpError as error:
+            logger.error(f"Failed to mark message {message_id} as read: {error}")
+            return False
 
     def send_email(self, to: str, subject: str, body: str) -> Optional[Dict]:
         """

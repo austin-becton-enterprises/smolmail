@@ -165,3 +165,603 @@
 2025-06-25 15:57:33 - INFO - Read message: Subject='Subject msg2', From='sendermsg2@example.com'
 2025-06-25 15:57:33 - ERROR - Error sending email to test@example.com: <HttpError <MagicMock name='mock.status' id='4399759440'> "Mocked Send Error">
 2025-06-25 15:57:33 - INFO - Email sent to test@example.com | Message ID: 123
+2025-06-25 17:03:16 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:03:16 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:03:16 - INFO - Fetching unread messages...
+2025-06-25 17:03:16 - INFO - Fetching unread messages...
+2025-06-25 17:03:17 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:03:17 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:03:17 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:03:17 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:03:17 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:03:17 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:03:24 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e70f658e14b
+2025-06-25 17:03:24 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e70f658e14b
+2025-06-25 17:03:24 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:03:24 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:03:24 - ERROR - Error sending email: name 'email' is not defined
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 42, in test_send_email
+    gmail_service.mark_as_read(email['id'])
+                               ^^^^^
+NameError: name 'email' is not defined. Did you mean: 'gmail'? Or did you forget to import 'email'?
+2025-06-25 17:03:24 - ERROR - Error sending email: name 'email' is not defined
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 42, in test_send_email
+    gmail_service.mark_as_read(email['id'])
+                               ^^^^^
+NameError: name 'email' is not defined. Did you mean: 'gmail'? Or did you forget to import 'email'?
+2025-06-25 17:03:43 - INFO - Email send cancelled by user.
+2025-06-25 17:03:43 - INFO - Email send cancelled by user.
+2025-06-25 17:04:17 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:04:17 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:04:17 - INFO - Fetching unread messages...
+2025-06-25 17:04:17 - INFO - Fetching unread messages...
+2025-06-25 17:04:17 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:17 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:18 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:18 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:18 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:04:18 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:04:18 - ERROR - Error reading emails: test_send_email() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 25, in test_read_email
+    test_send_email(gmail_service,email['From'],email['id'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: test_send_email() takes 2 positional arguments but 3 were given
+2025-06-25 17:04:18 - ERROR - Error reading emails: test_send_email() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 25, in test_read_email
+    test_send_email(gmail_service,email['From'],email['id'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: test_send_email() takes 2 positional arguments but 3 were given
+2025-06-25 17:04:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:04:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:04:30 - INFO - Fetching unread messages...
+2025-06-25 17:04:30 - INFO - Fetching unread messages...
+2025-06-25 17:04:31 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:31 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:31 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:31 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:31 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:04:31 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:04:34 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e821e9c7727
+2025-06-25 17:04:34 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e821e9c7727
+2025-06-25 17:04:34 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:04:34 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:04:34 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:04:34 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:04:34 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/197a8a44ff76d147/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:04:34 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/197a8a44ff76d147/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:04:40 - INFO - Email send cancelled by user.
+2025-06-25 17:04:40 - INFO - Email send cancelled by user.
+2025-06-25 17:04:42 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:04:42 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:04:42 - INFO - Fetching unread messages...
+2025-06-25 17:04:42 - INFO - Fetching unread messages...
+2025-06-25 17:04:42 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:42 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:42 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:42 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:04:42 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:04:42 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:04:46 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e84ea481ae2
+2025-06-25 17:04:46 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e84ea481ae2
+2025-06-25 17:04:46 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:04:46 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:04:46 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:04:46 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:04:46 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/197a8a44ff76d147/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:04:46 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/me/messages/197a8a44ff76d147/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:05:02 - INFO - Email send cancelled by user.
+2025-06-25 17:05:02 - INFO - Email send cancelled by user.
+2025-06-25 17:05:03 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:05:03 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:05:03 - INFO - Fetching unread messages...
+2025-06-25 17:05:03 - INFO - Fetching unread messages...
+2025-06-25 17:05:04 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:05:04 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:05:04 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:05:04 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:05:04 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:05:04 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:05:16 - INFO - Email send cancelled by user.
+2025-06-25 17:05:16 - INFO - Email send cancelled by user.
+2025-06-25 17:06:13 - INFO - Email send cancelled by user.
+2025-06-25 17:06:13 - INFO - Email send cancelled by user.
+2025-06-25 17:06:16 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:06:16 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:06:16 - INFO - Fetching unread messages...
+2025-06-25 17:06:16 - INFO - Fetching unread messages...
+2025-06-25 17:06:16 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:06:16 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:06:16 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:06:16 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:06:16 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:06:16 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:06:23 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e9c8b1d9702
+2025-06-25 17:06:23 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e9c8b1d9702
+2025-06-25 17:06:23 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:06:23 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:06:23 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:06:23 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:06:23 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/197a8a44ff76d147/messages/197a8a44ff76d147/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:06:23 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/197a8a44ff76d147/messages/197a8a44ff76d147/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:06:32 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e9ee7bc58d3
+2025-06-25 17:06:32 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8e9ee7bc58d3
+2025-06-25 17:06:32 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:06:32 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:06:32 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:06:32 - WARNING - Encountered 403 Forbidden with reason "insufficientPermissions"
+2025-06-25 17:06:32 - ERROR - Failed to mark message 197a8a38fe8d6661 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/197a8a38fe8d6661/messages/197a8a38fe8d6661/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:06:32 - ERROR - Failed to mark message 197a8a38fe8d6661 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/197a8a38fe8d6661/messages/197a8a38fe8d6661/modify?alt=json returned "Request had insufficient authentication scopes.". Details: "[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]">
+2025-06-25 17:07:40 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:07:40 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:07:40 - INFO - Fetching unread messages...
+2025-06-25 17:07:40 - INFO - Fetching unread messages...
+2025-06-25 17:07:40 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:07:40 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:12:44 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:12:44 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:12:44 - INFO - Fetching unread messages...
+2025-06-25 17:12:44 - INFO - Fetching unread messages...
+2025-06-25 17:12:44 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:12:44 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:13:09 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:13:09 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:13:09 - INFO - Fetching unread messages...
+2025-06-25 17:13:09 - INFO - Fetching unread messages...
+2025-06-25 17:13:09 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:13:09 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:14:16 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:14:16 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:14:16 - INFO - Fetching unread messages...
+2025-06-25 17:14:16 - INFO - Fetching unread messages...
+2025-06-25 17:14:16 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:14:16 - ERROR - Error reading emails: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 12, in test_read_email
+    emails = gmail_service.read_most_recent_emails()
+  File "/Users/aditya/Desktop/project/smolmail/app/core/gmail_facade.py", line 46, in read_most_recent_emails
+    ).execute()
+      ~~~~~~~^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ~~~~~~~~~~~~~~^
+        http,
+        ^^^^^
+    ...<7 lines>...
+        headers=self.headers,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        enable_reauth_refresh=self._enable_reauth_refresh,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/reauth.py", line 366, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aditya/Desktop/project/lib/python3.13/site-packages/google/oauth2/_client.py", line 69, in _handle_error_response
+    raise exceptions.RefreshError(
+        error_details, response_data, retryable=retryable_error
+    )
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+2025-06-25 17:14:56 - INFO - "GET /?state=M52s4naHbg9cLJciJDsXxnW0r2DzlA&code=4/0AVMBsJgQr6hqoIoU7oR114rp5ouSfJ1pv_eRzxN8acl0Q__Oz7OerD6d_A_A_r5ZzajKOA&scope=https://www.googleapis.com/auth/gmail.modify%20https://www.googleapis.com/auth/gmail.send HTTP/1.1" 200 65
+2025-06-25 17:14:56 - INFO - "GET /?state=M52s4naHbg9cLJciJDsXxnW0r2DzlA&code=4/0AVMBsJgQr6hqoIoU7oR114rp5ouSfJ1pv_eRzxN8acl0Q__Oz7OerD6d_A_A_r5ZzajKOA&scope=https://www.googleapis.com/auth/gmail.modify%20https://www.googleapis.com/auth/gmail.send HTTP/1.1" 200 65
+2025-06-25 17:14:56 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:14:56 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:14:56 - INFO - Fetching unread messages...
+2025-06-25 17:14:56 - INFO - Fetching unread messages...
+2025-06-25 17:14:56 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:14:56 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:14:56 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:14:56 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:14:56 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:14:56 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:15:02 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8f1b7f3aaa4a
+2025-06-25 17:15:02 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8f1b7f3aaa4a
+2025-06-25 17:15:02 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:15:02 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:15:04 - WARNING - Encountered 403 Forbidden with reason "forbidden"
+2025-06-25 17:15:04 - WARNING - Encountered 403 Forbidden with reason "forbidden"
+2025-06-25 17:15:04 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/197a8a44ff76d147/messages/197a8a44ff76d147/modify?alt=json returned "Invalid user id specified in request/Delegation denied". Details: "[{'message': 'Invalid user id specified in request/Delegation denied', 'domain': 'global', 'reason': 'forbidden'}]">
+2025-06-25 17:15:04 - ERROR - Failed to mark message 197a8a44ff76d147 as read: <HttpError 403 when requesting https://gmail.googleapis.com/gmail/v1/users/197a8a44ff76d147/messages/197a8a44ff76d147/modify?alt=json returned "Invalid user id specified in request/Delegation denied". Details: "[{'message': 'Invalid user id specified in request/Delegation denied', 'domain': 'global', 'reason': 'forbidden'}]">
+2025-06-25 17:16:07 - INFO - Email send cancelled by user.
+2025-06-25 17:16:07 - INFO - Email send cancelled by user.
+2025-06-25 17:16:08 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:16:08 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:16:08 - INFO - Fetching unread messages...
+2025-06-25 17:16:08 - INFO - Fetching unread messages...
+2025-06-25 17:16:09 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:16:09 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:16:09 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:16:09 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:16:09 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:16:09 - INFO - Retrieved 2 unread emails.
+2025-06-25 17:16:10 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8f2bce82ec0e
+2025-06-25 17:16:10 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8f2bce82ec0e
+2025-06-25 17:16:10 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:16:10 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:16:10 - INFO - Marked message 197a8a44ff76d147 as read.
+2025-06-25 17:16:10 - INFO - Marked message 197a8a44ff76d147 as read.
+2025-06-25 17:16:12 - INFO - Email send cancelled by user.
+2025-06-25 17:16:12 - INFO - Email send cancelled by user.
+2025-06-25 17:16:24 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:16:24 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:16:24 - INFO - Fetching unread messages...
+2025-06-25 17:16:24 - INFO - Fetching unread messages...
+2025-06-25 17:16:24 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:16:24 - INFO - Read message: Subject='Re: AI Test Email via gmail_service', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 17:16:24 - INFO - Retrieved 1 unread emails.
+2025-06-25 17:16:24 - INFO - Retrieved 1 unread emails.
+2025-06-25 17:16:28 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8f305c369ba6
+2025-06-25 17:16:28 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a8f305c369ba6
+2025-06-25 17:16:28 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:16:28 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 17:16:28 - INFO - Marked message 197a8a38fe8d6661 as read.
+2025-06-25 17:16:28 - INFO - Marked message 197a8a38fe8d6661 as read.
+2025-06-25 17:16:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:16:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 17:16:30 - INFO - Fetching unread messages...
+2025-06-25 17:16:30 - INFO - Fetching unread messages...
+2025-06-25 17:16:30 - INFO - No unread messages found.
+2025-06-25 17:16:30 - INFO - No unread messages found.
+2025-06-25 17:16:30 - INFO - No unread emails found.
+2025-06-25 17:16:30 - INFO - No unread emails found.
