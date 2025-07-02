@@ -28,7 +28,7 @@ However, the key point is:
 
 ---
 
-## 🛠️ Setup Steps (Using a New GCP Project)
+## Setup Steps (Using a New GCP Project)
 
 1. Go to: [https://console.cloud.google.com](https://console.cloud.google.com)  
 2. Create a **new** GCP project  
@@ -40,3 +40,16 @@ However, the key point is:
 6. Download the `credentials.json` file and test using the Firestore Python SDK  
 
 This setup helps us simulate how a client might bring their own GCP project and ensures our system is flexible and portable.
+
+## Authentication & Access
+
+1. **Create a new service account** within the new GCP project you created for Firestore:
+   - Go to **IAM & Admin > Service Accounts**
+   - Click **“Create Service Account”**
+   - Grant it the role: **"Cloud Datastore User"** or **"Firestore User"**
+
+2. **Generate and download the `credentials.json` key** for that service account:
+   - In the service account settings, go to **"Keys" → "Add Key" → "Create new key"**
+   - Choose **JSON** format and download the key file
+
+3. Add the downloaded `credentials.json` file to your project root or secure location
