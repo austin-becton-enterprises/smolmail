@@ -53,3 +53,76 @@ This setup helps us simulate how a client might bring their own GCP project and 
    - Choose **JSON** format and download the key file
 
 3. Add the downloaded `credentials.json` file to your project root or secure location
+
+---
+
+## Python Setup and Testing
+
+### Install Firestore client library:
+
+```bash
+pip install google-cloud-firestore
+```
+### Example: Basic Usage in Python
+
+```python
+from google.cloud import firestore
+
+# Initialize Firestore client (uses credentials from environment)
+db = firestore.Client()
+
+# Add a document
+db.collection("contacts").document("john_doe").set({
+    "name": "John Doe",
+    "email": "john@example.com",
+    "tags": ["partner", "developer"]
+})
+
+# Read documents
+docs = db.collection("contacts").stream()
+for doc in docs:
+    print(f"{doc.id} => {doc.to_dict()}")
+
+# Update a document
+db.collection("contacts").document("john_doe").update({
+    "email": "john.doe@newmail.com"
+})
+
+# Delete a document
+db.collection("contacts").document("john_doe").delete()
+```
+---
+
+## Data Modeling in Firestore
+
+Firestore is flexible, but not relational. It’s good to plan out collections:
+
+- `contacts` — stores each contact as a document
+- `templates` — email templates
+- `emails` — sent/received emails, optional metadata
+- `logs` — optional, for tracking status or errors
+
+**Avoid overly nested data** and **don’t treat it like SQL.**
+
+---
+
+## Firestore Pros and Cons
+
+### Pros:
+- Real-time syncing (optional)
+- Serverless and auto-scaling
+- Generous free tier
+- Works well with GCP tools
+- Flexible JSON-like structure
+
+### Cons:
+- No complex joins (not relational)
+- Query limitations (e.g. no multiple inequality filters)
+- Write/read cost model (careful with high-volume reads)
+
+---
+
+
+
+
+
