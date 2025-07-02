@@ -46,7 +46,7 @@ def test_send_email(gmail_service,to,id):
                 print("Email failed to send.")
         else:
             logger.info("Email send cancelled by user.")
-            print("⚠️ Email send cancelled.")
+            print(" Email send cancelled.")
     except Exception as e:
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
