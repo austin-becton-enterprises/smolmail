@@ -1,0 +1,12 @@
+2025-06-25 14:36:09 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 14:36:09 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-06-25 14:36:09 - INFO - Fetching unread messages...
+2025-06-25 14:36:09 - INFO - Fetching unread messages...
+2025-06-25 14:36:10 - INFO - Read message: Subject='Test for Read and Write', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 14:36:10 - INFO - Read message: Subject='Test for Read and Write', From='Customer1 <customer1.becton@gmail.com>'
+2025-06-25 14:36:10 - INFO - Retrieved 1 unread emails.
+2025-06-25 14:36:10 - INFO - Retrieved 1 unread emails.
+2025-06-25 14:36:11 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a86046995462c
+2025-06-25 14:36:11 - INFO - Email sent to Customer1 <customer1.becton@gmail.com> | Message ID: 197a86046995462c
+2025-06-25 14:36:11 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.
+2025-06-25 14:36:11 - INFO - Email sent successfully to Customer1 <customer1.becton@gmail.com>.

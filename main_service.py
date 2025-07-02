@@ -1,15 +1,15 @@
 # main_tools.py
 
-from gmail import API
-from gmail_service import read_most_recent_emails, send_email
-from log_config import setup_logger
+from app.core.gmail_api import API
+from app.core.gmail_facade import GmailService
+from app.utils.log_config import setup_logger
 
 logger = setup_logger()
 
-def test_read_email(service):
+def test_read_email(gmail_service):
     # Test reading unread emails using the gmail_service function
     try:
-        emails = read_most_recent_emails(service)
+        emails = gmail_service.read_most_recent_emails()
         if not emails:
             logger.info("No unread emails found.")
             print("No unread emails found.")
@@ -22,13 +22,13 @@ def test_read_email(service):
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
-                test_send_email(service,email['From'])
+                test_send_email(gmail_service,email['From'])
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
 
 
-def test_send_email(service,to):
+def test_send_email(gmail_service,to):
     try:
         # to = input("Enter your email address to send a test email: ").strip()
         subject = "AI Test Email via gmail_service"
@@ -36,7 +36,7 @@ def test_send_email(service,to):
         
         confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
         if confirmation == 'y':
-            result = send_email(service, to, subject, body)
+            result = gmail_service.send_email(to, subject, body)
             if result:
                 logger.info(f"Email sent successfully to {to}.")
                 print("Email sent successfully.")
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     # Authenticate and build the service
     gmail = API()
-    service = gmail.service
+    gmail_service = GmailService(gmail.service)
 
     # Run tests
-    test_read_email(service)
+    test_read_email(gmail_service)
