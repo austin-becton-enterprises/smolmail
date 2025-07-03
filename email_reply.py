@@ -16,7 +16,6 @@ def general_email_reply(
     sender_name = "Support team"
     company_name = "Becton Enterprises"
  
-
     greeting = f"Hello {name}," if name else "Hello,"
     body = (
         f"{greeting}\n\n"
@@ -40,6 +39,7 @@ def general_email_reply(
         "Best regards,\n"
         f"{sender_name}\n"
         f"{company_name or ''}"
+
     )
 
     return body
@@ -51,7 +51,6 @@ def ai_email_reply(
     sender_name: str | None = None,
     company_name: str | None = None) -> str:    
 
-    
     greeting = f"Hello {name}," if name else "Hello,"
     body = (
         f"{greeting}\n\n"
@@ -68,6 +67,7 @@ def ai_email_reply(
         "Best regards,\n"
         f"{sender_name}\n"
         f"{company_name or ''}"
+
     )
 
     return body
