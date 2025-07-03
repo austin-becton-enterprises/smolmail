@@ -3,7 +3,7 @@ Tool: EmailReader
 Purpose: Parses and understands emails from an inbox
 """
 from smolagents.tools import Tool
-from mock_data import get_dummy_templates   # imports mock data
+import mock_data as mockData
 
 class EmailReader(Tool):
     name = "read_email"
@@ -36,7 +36,7 @@ class EmailReader(Tool):
 
     
     def forward(self, mode: str, index: int = 0) -> str: 
-        emails = get_dummy_templates    # grabs the mock data 
+        emails = mockData.get_dummy_templates    # grabs the mock data 
 
         if not emails:                  
             return "inbox is empty" 
