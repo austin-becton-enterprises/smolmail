@@ -8,7 +8,7 @@ from contact_template_models import (
     update_template,
     delete_template
 )
-from mock_data import get_dummy_contacts, get_dummy_templates
+from smolmail.app.sample_data.mock_data import get_dummy_contacts, get_dummy_templates
 
 # === Load and test dummy contacts ===
 print("=== Contact Tests ===")
