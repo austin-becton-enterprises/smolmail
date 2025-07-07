@@ -7,7 +7,7 @@ import mock_data as mockData
 
 class EmailReader(Tool):
     name = "read_email"
-    description = "Reads emails from a specificed inboxed and returns them."
+    description = "Reads emails from a specificed inbox and returns them.It can retrieve emails from the inbox and extract information such as the subject, sender, and text content."
 
     input = {
         "mode": {
@@ -21,7 +21,26 @@ class EmailReader(Tool):
             "default": 0
         }
     }
-    
+    examples = [
+        {
+            "inputs": { "email_id": "17c8e4b1a2f1e0d2" },
+            "expected_output": {
+                "subject": "Invoice for July Services",
+                "sender": "billing@example.com",
+                "body": "Dear Customer, please find attached the invoice for services rendered in July. Thank you for your business.",
+                "attachments": ["invoice_july.pdf"]
+            }
+        },
+        {
+            "inputs": { "sender": "person1@client.com" },
+            "expected_output": {
+                "subject": "Meeting Request",
+                "sender": "person1@client.com",
+                "body": "Hi, can we schedule a meeting some time next week? I am available on Monday and Wednesday."
+            }
+        }
+    ]
+
     output_type = "string"
 
     # helper method that takes in a single email (as a dictionary) and returns a nicely formatted string.
