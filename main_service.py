@@ -1,3 +1,6 @@
+# Testing email_reply
+from email_reply import general_email_reply, ai_email_reply
+
 # main_tools.py
 
 from app.core.gmail_api import API
@@ -16,30 +19,38 @@ def test_read_email(gmail_service):
         else:
             logger.info(f"Retrieved {len(emails)} unread emails.")
             print(f"Retrieved {len(emails)} unread emails:")
-            print(emails)
             for email in emails:
-                print(f"- From: {email['From']}")
+                print(f"- From: {email['sender']}")
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
-                test_send_email(gmail_service,email['From'],email['id'])
+                test_send_email(gmail_service, email['sender'], email['id'])
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
 
-
-def test_send_email(gmail_service,to,id):
+def test_send_email(gmail_service, to=None, id=None):
     try:
-        # to = input("Enter your email address to send a test email: ").strip()
-        subject = "AI Test Email via gmail_service"
-        body = "This is a test email sent using the new gmail_service module."
-        
-        confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
+        # Prompt for email address to send a test message if not provided
+        if not to:
+            to = input("Enter email address to send a test email: ").strip()
+
+        # Inputs
+        name = input("Enter recipient name (optional): ").strip() or None
+        issue = input("Enter issue (optional): ").strip() or None
+        additional_info = input("Any additional info (optional): ").strip() or None
+
+        # Generate body using email_template
+        body = general_email_reply(name=name, issue=issue, additional_info=additional_info)
+        subject = f"Re: {issue or 'Support Request'}"
+
+        confirmation = input(f"Send email to {to}? \n\n{body}\n\n(y/n): ").strip().lower()
         if confirmation == 'y':
             result = gmail_service.send_email(to, subject, body)
             if result:
                 logger.info(f"Email sent successfully to {to}.")
-                gmail_service.mark_as_read(id)
+                if id:
+                    gmail_service.mark_as_read(id)
                 print("Email sent successfully.")
             else:
                 logger.error(f"Email failed to send to {to}.")
@@ -50,7 +61,6 @@ def test_send_email(gmail_service,to,id):
     except Exception as e:
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
-
 
 if __name__ == '__main__':
     print("=== Gmail Tools Test Runner ===")
