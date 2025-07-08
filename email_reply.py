@@ -1,4 +1,4 @@
-from gmail_service import send_email
+from app.core.gmail_facade import GmailService
 #from log_config import setup_logger
 
 #Initialize loger 
