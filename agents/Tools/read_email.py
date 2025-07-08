@@ -77,3 +77,5 @@ class EmailReader(Tool):
                 return f"Invalid index. Please choose betwen 0 and {len(emails) - 1}."
         else: 
             return "invalid mode. Choose 'all', 'latest', or specific'."
+        
+        #hellotest
