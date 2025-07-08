@@ -3,6 +3,7 @@ from email_reply import general_email_reply, ai_email_reply
 
 # main_tools.py
 from app.core.mail_agent import MailAgent
+from app.core.mail_agent import MailAgent
 from app.core.gmail_api import API
 from app.core.gmail_facade import GmailService
 from app.utils.log_config import setup_logger
@@ -24,6 +25,12 @@ def test_read_email(gmail_service):
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
+                test_send_email(
+                    gmail_service,
+                    to=email['From'],
+                    id=email['id'],
+                    snippet=email['snippet']
+                )
                 test_send_email(
                     gmail_service,
                     to=email['From'],
