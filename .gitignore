@@ -195,3 +195,4 @@ cython_debug/
 
 credentials.json
 token.json
+firestore_credentials.json

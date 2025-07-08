@@ -1,3 +1,6 @@
+# Testing email_reply
+from email_reply import general_email_reply, ai_email_reply
+
 # main_tools.py
 from app.core.mail_agent import MailAgent
 from app.core.gmail_api import API
@@ -17,9 +20,8 @@ def test_read_email(gmail_service):
         else:
             logger.info(f"Retrieved {len(emails)} unread emails.")
             print(f"Retrieved {len(emails)} unread emails:")
-            print(emails)
             for email in emails:
-                print(f"- From: {email['From']}")
+                print(f"- From: {email['sender']}")
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
@@ -32,7 +34,6 @@ def test_read_email(gmail_service):
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
-
 
 def test_send_email(gmail_service,to,id,snippet):
     try:
@@ -57,7 +58,6 @@ def test_send_email(gmail_service,to,id,snippet):
     except Exception as e:
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
-
 
 if __name__ == '__main__':
     print("=== Gmail Tools Test Runner ===")
