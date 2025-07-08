@@ -8,7 +8,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 data = {
-    "name": "John Doe",
+    "name": "John",
     "email": "john.doe@example.com",
     "created_at": firestore.SERVER_TIMESTAMP
 }
