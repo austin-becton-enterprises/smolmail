@@ -193,6 +193,6 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-credentials.json
+*.json
 token.json
 firestore_credentials.json

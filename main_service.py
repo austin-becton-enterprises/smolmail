@@ -113,10 +113,21 @@ def main():
         if y == '1':
             client_id = input("Enter Client ID to log email activity: ").strip()
             if fs_service.login_client(client_id):
+                client_data = fs_service.read_client(client_id)
+                if not client_data:
+                    print("❌ Failed to fetch client data.")
+                    return
+
                 print(f"✅ Logged in as {client_id}")
-                print("=== Gmail Tools Test Runner ===")
-                gmail = API()
+                
+                # Extract credential path from Firestore
+                client_credentials = client_data.get("client_credentials")
+                print(f"🔐 Using Gmail credentials: {client_credentials}")
+
+                # Initialize Gmail API using client-specific credentials
+                gmail = API(creds_path=client_credentials)
                 gmail_service = GmailService(gmail.service)
+
                 test_read_email(gmail_service, fs_service)
             else:
                 print("❌ Client not found.")

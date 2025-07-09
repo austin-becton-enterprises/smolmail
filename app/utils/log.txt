@@ -963,3 +963,41 @@ KeyError: 'sender'
 2025-07-09 15:41:21 - INFO - Email send cancelled by user.
 2025-07-09 15:41:24 - INFO - Email send cancelled by user.
 2025-07-09 15:41:24 - INFO - Email send cancelled by user.
+2025-07-09 16:18:12 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 16:18:12 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 16:18:12 - INFO - Fetching unread messages...
+2025-07-09 16:18:12 - INFO - Fetching unread messages...
+2025-07-09 16:18:13 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:18:13 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:18:13 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:18:13 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:18:13 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:18:13 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:18:13 - INFO - Retrieved 3 unread emails.
+2025-07-09 16:18:13 - INFO - Retrieved 3 unread emails.
+2025-07-09 16:18:25 - INFO - Email send cancelled by user.
+2025-07-09 16:18:25 - INFO - Email send cancelled by user.
+2025-07-09 16:18:27 - INFO - Email send cancelled by user.
+2025-07-09 16:18:27 - INFO - Email send cancelled by user.
+2025-07-09 16:18:49 - INFO - Email send cancelled by user.
+2025-07-09 16:18:49 - INFO - Email send cancelled by user.
+2025-07-09 16:19:36 - INFO - "GET /?state=AyEhWqwbnhb83Gwv8KFLr2ONMvNySU&code=4/0AVMBsJhdJCGDj9TNr1Kji0o-onqYH2plCBOhTDyOK0DmbRzImhHFnTePHzxvZn8trN99UA&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-09 16:19:36 - INFO - "GET /?state=AyEhWqwbnhb83Gwv8KFLr2ONMvNySU&code=4/0AVMBsJhdJCGDj9TNr1Kji0o-onqYH2plCBOhTDyOK0DmbRzImhHFnTePHzxvZn8trN99UA&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-09 16:19:36 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 16:19:36 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 16:19:36 - INFO - Fetching unread messages...
+2025-07-09 16:19:36 - INFO - Fetching unread messages...
+2025-07-09 16:19:36 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:19:36 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:19:37 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:19:37 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:19:37 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:19:37 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 16:19:37 - INFO - Retrieved 3 unread emails.
+2025-07-09 16:19:37 - INFO - Retrieved 3 unread emails.
+2025-07-09 16:19:41 - INFO - Email send cancelled by user.
+2025-07-09 16:19:41 - INFO - Email send cancelled by user.
+2025-07-09 16:19:43 - INFO - Email send cancelled by user.
+2025-07-09 16:19:43 - INFO - Email send cancelled by user.
+2025-07-09 16:19:44 - INFO - Email send cancelled by user.
+2025-07-09 16:19:44 - INFO - Email send cancelled by user.

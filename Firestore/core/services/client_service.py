@@ -35,14 +35,16 @@ class ClientService:
 
         client_zipcode = input_non_empty("Zip Code: ")
 
+        client_credentials=client_id+"_credentials.json"
+
         client_data = {
             "client_name": client_name,
             "client_address": client_address,
             "client_phno": client_phno,
             "client_email": client_email,
-            "client_zipcode": client_zipcode
+            "client_zipcode": client_zipcode,
+            "client_credentials": client_credentials
         }
-
         self.fs.create_client(client_id, client_data)
         print(f"Client '{client_id}' registered successfully.")
 
