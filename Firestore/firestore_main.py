@@ -1,6 +1,6 @@
-from core.services.client_service import ClientService
-from core.services.template_service import TemplateService
-from utils.helpers import input_choice, input_non_empty, input_yes_no
+from Firestore.core.services.client_service import ClientService
+from Firestore.core.services.template_service import TemplateService
+from Firestore.utils.helpers import input_choice, input_non_empty, input_yes_no
 
 def print_client_summary(client):
     print(f"ID: {client.get('client_id')}, Name: {client.get('client_name')}, Email: {client.get('client_email')}")
@@ -115,7 +115,7 @@ def template_menu(fs_template):
             break
         input("Press Enter to continue...")
 
-def main():
+def firestoremain():
     fs_client = ClientService()
     fs_template = TemplateService()
 
@@ -139,6 +139,3 @@ def main():
         elif choice == '0':
             print("Goodbye!")
             break
-
-if __name__ == "__main__":
-    main()

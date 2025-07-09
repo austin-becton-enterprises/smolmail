@@ -1,5 +1,5 @@
 from ..firestore_service import FirestoreService
-from utils.helpers import input_non_empty, is_valid_email, is_valid_phone, generate_unique_id
+from Firestore.utils.helpers import input_non_empty, is_valid_email, is_valid_phone, generate_unique_id
 
 class ClientService:
     def __init__(self):

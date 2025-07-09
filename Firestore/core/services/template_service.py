@@ -1,5 +1,5 @@
 from ..firestore_service import FirestoreService
-from utils.helpers import input_non_empty, generate_unique_id
+from Firestore.utils.helpers import input_non_empty, generate_unique_id
 
 class TemplateService:
     def __init__(self):

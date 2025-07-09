@@ -21,14 +21,14 @@ class FirestoreService:
     def create_client(self, client_id: str, data: dict):
         data['client_id'] = client_id
         data['created_at'] = firestore.SERVER_TIMESTAMP
-        self.db.collection("contacts").document(client_id).set(data)
+        self.db.collection("clients").document(client_id).set(data)
 
     def read_client(self, client_id: str):
-        doc = self.db.collection("contacts").document(client_id).get()
+        doc = self.db.collection("clients").document(client_id).get()
         return doc.to_dict() if doc.exists else None
 
     def update_client(self, client_id: str, updates: dict):
-        self.db.collection("contacts").document(client_id).update(updates)
+        self.db.collection("clients").document(client_id).update(updates)
 
     def delete_client(self, client_id: str):
         # Delete templates
@@ -40,10 +40,10 @@ class FirestoreService:
         for email in emails:
             email.reference.delete()
         # Delete client
-        self.db.collection("contacts").document(client_id).delete()
+        self.db.collection("clients").document(client_id).delete()
 
     def list_clients(self, limit=10, start_after=None):
-        query = self.db.collection("contacts").order_by("client_id").limit(limit)
+        query = self.db.collection("clients").limit(limit)
         if start_after:
             query = query.start_after(start_after)
         return list(query.stream())
@@ -80,7 +80,6 @@ class FirestoreService:
     def list_templates(self, limit=10, start_after=None):
         query = self.db.collection("templates")\
             .where("client_id", "==", self.logged_in_client_id)\
-            .order_by("template_id")\
             .limit(limit)
         if start_after:
             query = query.start_after(start_after)
@@ -104,7 +103,6 @@ class FirestoreService:
     def get_emails_for_logged_in_client(self, limit=10, start_after=None):
         query = self.db.collection("emails")\
             .where("client_id", "==", self.logged_in_client_id)\
-            .order_by("sent_at", direction=firestore.Query.DESCENDING)\
             .limit(limit)
         if start_after:
             query = query.start_after(start_after)

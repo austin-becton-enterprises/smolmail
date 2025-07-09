@@ -815,3 +815,103 @@ Traceback (most recent call last):
     print(f"- From: {email['sender']}")
                      ~~~~~^^^^^^^^^^
 KeyError: 'sender'
+2025-07-09 14:33:02 - INFO - "GET /?state=9jRfcPqmlaL2OwZQh6vsF3YAZpVmw7&code=4/0AVMBsJgWLKBl9H2oHhM_UxeYyB4g9I0UR_41CPzCD2VB2ejvnEhuMzCucNlDWYr490HkzA&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-09 14:33:02 - INFO - "GET /?state=9jRfcPqmlaL2OwZQh6vsF3YAZpVmw7&code=4/0AVMBsJgWLKBl9H2oHhM_UxeYyB4g9I0UR_41CPzCD2VB2ejvnEhuMzCucNlDWYr490HkzA&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-09 14:33:02 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:33:02 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:33:02 - INFO - Fetching unread messages...
+2025-07-09 14:33:02 - INFO - Fetching unread messages...
+2025-07-09 14:33:03 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:03 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:03 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:03 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:03 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:03 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:03 - INFO - Retrieved 3 unread emails.
+2025-07-09 14:33:03 - INFO - Retrieved 3 unread emails.
+2025-07-09 14:33:03 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 24, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-09 14:33:03 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 24, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-09 14:33:08 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:33:08 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:33:08 - INFO - Fetching unread messages...
+2025-07-09 14:33:08 - INFO - Fetching unread messages...
+2025-07-09 14:33:08 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:08 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:08 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:08 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:08 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:08 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:09 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:09 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:09 - INFO - Retrieved 4 unread emails.
+2025-07-09 14:33:09 - INFO - Retrieved 4 unread emails.
+2025-07-09 14:33:09 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 24, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-09 14:33:09 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 24, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-09 14:33:27 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:33:27 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:33:27 - INFO - Fetching unread messages...
+2025-07-09 14:33:27 - INFO - Fetching unread messages...
+2025-07-09 14:33:27 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:27 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:28 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:28 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:28 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:28 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:28 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:28 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:33:28 - INFO - Retrieved 4 unread emails.
+2025-07-09 14:33:28 - INFO - Retrieved 4 unread emails.
+2025-07-09 14:33:28 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 28, in test_read_email
+    test_send_email(gmail_service, email['sender'], email['id'])
+                                   ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-09 14:33:28 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 28, in test_read_email
+    test_send_email(gmail_service, email['sender'], email['id'])
+                                   ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-09 14:34:01 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:34:01 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 14:34:01 - INFO - Fetching unread messages...
+2025-07-09 14:34:01 - INFO - Fetching unread messages...
+2025-07-09 14:34:01 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:01 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:01 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:01 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:01 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:01 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:02 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:02 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 14:34:02 - INFO - Retrieved 4 unread emails.
+2025-07-09 14:34:02 - INFO - Retrieved 4 unread emails.
+2025-07-09 14:34:12 - INFO - Email send cancelled by user.
+2025-07-09 14:34:12 - INFO - Email send cancelled by user.
+2025-07-09 14:34:16 - INFO - Email send cancelled by user.
+2025-07-09 14:34:16 - INFO - Email send cancelled by user.
+2025-07-09 14:34:19 - INFO - Email send cancelled by user.
+2025-07-09 14:34:19 - INFO - Email send cancelled by user.
+2025-07-09 14:34:20 - INFO - Email send cancelled by user.
+2025-07-09 14:34:20 - INFO - Email send cancelled by user.
