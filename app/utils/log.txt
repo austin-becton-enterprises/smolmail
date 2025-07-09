@@ -915,3 +915,51 @@ KeyError: 'sender'
 2025-07-09 14:34:19 - INFO - Email send cancelled by user.
 2025-07-09 14:34:20 - INFO - Email send cancelled by user.
 2025-07-09 14:34:20 - INFO - Email send cancelled by user.
+2025-07-09 15:36:56 - INFO - "GET /?state=smkn4lCVkyHLlXdnUqJ0i7rvGEJTGK&code=4/0AVMBsJj8tJ3_KxTz6JzrbqZVUPLYaNhbgGFrOYSADqJGBWJkwpCyIQjP6m99k2F-Zcylkg&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-09 15:36:56 - INFO - "GET /?state=smkn4lCVkyHLlXdnUqJ0i7rvGEJTGK&code=4/0AVMBsJj8tJ3_KxTz6JzrbqZVUPLYaNhbgGFrOYSADqJGBWJkwpCyIQjP6m99k2F-Zcylkg&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-09 15:36:57 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 15:36:57 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 15:36:57 - INFO - Fetching unread messages...
+2025-07-09 15:36:57 - INFO - Fetching unread messages...
+2025-07-09 15:36:57 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:57 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:57 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:57 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:57 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:57 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:58 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:58 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:36:58 - INFO - Retrieved 4 unread emails.
+2025-07-09 15:36:58 - INFO - Retrieved 4 unread emails.
+2025-07-09 15:37:05 - INFO - Email sent to Google <no-reply@accounts.google.com> | Message ID: 197f0b110806ea32
+2025-07-09 15:37:05 - INFO - Email sent to Google <no-reply@accounts.google.com> | Message ID: 197f0b110806ea32
+2025-07-09 15:37:06 - INFO - Marked message 197f0767205b8dfb as read.
+2025-07-09 15:37:06 - INFO - Marked message 197f0767205b8dfb as read.
+2025-07-09 15:37:06 - INFO - Email sent successfully to Google <no-reply@accounts.google.com>.
+2025-07-09 15:37:06 - INFO - Email sent successfully to Google <no-reply@accounts.google.com>.
+2025-07-09 15:37:06 - INFO - Logged email to Firestore with ID: cRKfYGFmxdUnxB7Cymzu
+2025-07-09 15:37:06 - INFO - Logged email to Firestore with ID: cRKfYGFmxdUnxB7Cymzu
+2025-07-09 15:40:48 - INFO - Email send cancelled by user.
+2025-07-09 15:40:48 - INFO - Email send cancelled by user.
+2025-07-09 15:40:50 - INFO - Email send cancelled by user.
+2025-07-09 15:40:50 - INFO - Email send cancelled by user.
+2025-07-09 15:40:53 - INFO - Email send cancelled by user.
+2025-07-09 15:40:53 - INFO - Email send cancelled by user.
+2025-07-09 15:41:06 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 15:41:06 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-09 15:41:06 - INFO - Fetching unread messages...
+2025-07-09 15:41:06 - INFO - Fetching unread messages...
+2025-07-09 15:41:06 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:41:06 - INFO - Read message: Subject='Recovery email verified for your Google Account', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:41:07 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:41:07 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:41:07 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:41:07 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-09 15:41:07 - INFO - Retrieved 3 unread emails.
+2025-07-09 15:41:07 - INFO - Retrieved 3 unread emails.
+2025-07-09 15:41:19 - INFO - Email send cancelled by user.
+2025-07-09 15:41:19 - INFO - Email send cancelled by user.
+2025-07-09 15:41:21 - INFO - Email send cancelled by user.
+2025-07-09 15:41:21 - INFO - Email send cancelled by user.
+2025-07-09 15:41:24 - INFO - Email send cancelled by user.
+2025-07-09 15:41:24 - INFO - Email send cancelled by user.

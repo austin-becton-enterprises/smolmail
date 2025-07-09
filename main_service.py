@@ -1,6 +1,7 @@
 # Testing email_reply
 from email_reply import general_email_reply, ai_email_reply
 from Firestore.firestore_main import firestoremain
+from Firestore.core.firestore_service import FirestoreService
 
 # main_tools.py
 
@@ -10,8 +11,7 @@ from app.utils.log_config import setup_logger
 
 logger = setup_logger()
 
-def test_read_email(gmail_service):
-    # Test reading unread emails using the gmail_service function
+def test_read_email(gmail_service, fs_service):
     try:
         emails = gmail_service.read_most_recent_emails()
         if not emails:
@@ -25,37 +25,73 @@ def test_read_email(gmail_service):
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
-                test_send_email(gmail_service, email['From'], email['id'])
+                test_send_email(gmail_service, fs_service, email['From'], email['id'])
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
 
-def test_send_email(gmail_service, to=None, id=None):
+def test_send_email(gmail_service, fs_service, to=None, id=None):
     try:
-        # Prompt for email address to send a test message if not provided
         if not to:
             to = input("Enter email address to send a test email: ").strip()
 
-        # Inputs
         name = input("Enter recipient name (optional): ").strip() or None
         issue = input("Enter issue (optional): ").strip() or None
         additional_info = input("Any additional info (optional): ").strip() or None
 
-        # Generate body using email_template
-        body = general_email_reply(name=name, issue=issue, additional_info=additional_info)
+        # Default values
+        selected_template_id = "custom"
+        body = None
+
+        # Try to fetch first available template
+        templates = fs_service.list_templates()
+        if templates:
+            first_template = templates[0]
+            selected_template_id = first_template.get("template_id", "custom")
+            template_code = first_template.get("template_code", "")
+
+            try:
+                body = template_code.format(name=name, issue=issue, additional_info=additional_info)
+                print(f"📄 Using template: {selected_template_id}")
+            except Exception as e:
+                logger.warning(f"Template rendering failed: {e}. Falling back to default.")
+                body = None
+
+        # Fallback if no valid template or rendering failed
+        if not body:
+            body = general_email_reply(name=name, issue=issue, additional_info=additional_info)
+            print("⚠️ Using default email reply template.")
+
         subject = f"Re: {issue or 'Support Request'}"
 
-        confirmation = input(f"Send email to {to}? \n\n{body}\n\n(y/n): ").strip().lower()
+        confirmation = input(f"\nSend email to {to}? \n\n{body}\n\n(y/n): ").strip().lower()
         if confirmation == 'y':
             result = gmail_service.send_email(to, subject, body)
             if result:
-                logger.info(f"Email sent successfully to {to}.")
                 if id:
                     gmail_service.mark_as_read(id)
-                print("Email sent successfully.")
+                logger.info(f"Email sent successfully to {to}.")
+                print("✅ Email sent successfully.")
+
+                metadata = {
+                    "to": to,
+                    "subject": subject,
+                    "template_id": selected_template_id,
+                    "issue": issue,
+                    "name": name,
+                    "additional_info": additional_info,
+                }
+
+                try:
+                    email_id = fs_service.log_email(template_id=selected_template_id, metadata=metadata)
+                    logger.info(f"Logged email to Firestore with ID: {email_id}")
+                    print(f"📬 Email logged in Firestore with ID: {email_id}")
+                except Exception as log_err:
+                    logger.error(f"Failed to log email: {log_err}", exc_info=True)
+                    print(f"⚠️ Failed to log email: {log_err}")
             else:
                 logger.error(f"Email failed to send to {to}.")
-                print("Email failed to send.")
+                print("❌ Email failed to send.")
         else:
             logger.info("Email send cancelled by user.")
             print("⚠️ Email send cancelled.")
@@ -63,7 +99,9 @@ def test_send_email(gmail_service, to=None, id=None):
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
 
+
 def main():
+    fs_service = FirestoreService()
     while True:
         print("\n=== Select Application ===")
         print("1. Gmail Tools")
@@ -73,10 +111,15 @@ def main():
         y = input("Enter option [1/2/0]: ").strip()
 
         if y == '1':
-            print("=== Gmail Tools Test Runner ===")
-            gmail = API()
-            gmail_service = GmailService(gmail.service)
-            test_read_email(gmail_service)
+            client_id = input("Enter Client ID to log email activity: ").strip()
+            if fs_service.login_client(client_id):
+                print(f"✅ Logged in as {client_id}")
+                print("=== Gmail Tools Test Runner ===")
+                gmail = API()
+                gmail_service = GmailService(gmail.service)
+                test_read_email(gmail_service, fs_service)
+            else:
+                print("❌ Client not found.")
         elif y == '2':
             firestoremain()
         elif y == '0':
