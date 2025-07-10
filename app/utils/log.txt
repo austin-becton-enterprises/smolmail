@@ -765,3 +765,53 @@ google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'i
 2025-06-25 17:16:30 - INFO - No unread messages found.
 2025-06-25 17:16:30 - INFO - No unread emails found.
 2025-06-25 17:16:30 - INFO - No unread emails found.
+2025-07-08 13:41:29 - INFO - "GET /?state=KUrkSrhfNFYCioBaYZAvwrs0bkjMJV&code=4/0AVMBsJihmsQpZye9tI9-rTuQxmc6lYboLAH2wZ4XNIBGA-xXixQ3AX3ss8s00r9rRZjB5w&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-08 13:41:29 - INFO - "GET /?state=KUrkSrhfNFYCioBaYZAvwrs0bkjMJV&code=4/0AVMBsJihmsQpZye9tI9-rTuQxmc6lYboLAH2wZ4XNIBGA-xXixQ3AX3ss8s00r9rRZjB5w&scope=https://www.googleapis.com/auth/gmail.send%20https://www.googleapis.com/auth/gmail.modify HTTP/1.1" 200 65
+2025-07-08 13:41:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-08 13:41:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-08 13:41:30 - INFO - Fetching unread messages...
+2025-07-08 13:41:30 - INFO - Fetching unread messages...
+2025-07-08 13:41:30 - INFO - No unread messages found.
+2025-07-08 13:41:30 - INFO - No unread messages found.
+2025-07-08 13:41:30 - INFO - No unread emails found.
+2025-07-08 13:41:30 - INFO - No unread emails found.
+2025-07-08 13:41:37 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-08 13:41:37 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-08 13:41:37 - INFO - Fetching unread messages...
+2025-07-08 13:41:37 - INFO - Fetching unread messages...
+2025-07-08 13:41:38 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-08 13:41:38 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-08 13:41:38 - INFO - Retrieved 1 unread emails.
+2025-07-08 13:41:38 - INFO - Retrieved 1 unread emails.
+2025-07-08 13:41:38 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 23, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-08 13:41:38 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 23, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-08 13:41:42 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-08 13:41:42 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-08 13:41:42 - INFO - Fetching unread messages...
+2025-07-08 13:41:42 - INFO - Fetching unread messages...
+2025-07-08 13:41:43 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-08 13:41:43 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-08 13:41:43 - INFO - Retrieved 1 unread emails.
+2025-07-08 13:41:43 - INFO - Retrieved 1 unread emails.
+2025-07-08 13:41:43 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 23, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-08 13:41:43 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "/Users/aditya/Desktop/project/smolmail/main_service.py", line 23, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
