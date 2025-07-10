@@ -3,13 +3,16 @@ Tool: EmailReader
 Purpose: Parses and understands emails from an inbox
 """
 from smolagents.tools import Tool
-import mock_data as mockData
+import app.sample_data.mock_data as mockData
 
 class EmailReader(Tool):
     name = "read_email"
-    description = "Reads emails from a specificed inbox and returns them.It can retrieve emails from the inbox and extract information such as the subject, sender, and text content."
-
-    input = {
+    description = {
+        "Parses and returns email from specified inbox. "
+        "Supports retrieving all emails, the latest email, or a specific email by index. "
+        "Returns the sender, object, and body content of the email. "
+    }
+    inputs = {
         "mode": {
             "type": "string",
             "enum": ["all", "latest", "specific"],
@@ -21,25 +24,6 @@ class EmailReader(Tool):
             "default": 0
         }
     }
-    examples = [
-        {
-            "inputs": { "email_id": "17c8e4b1a2f1e0d2" },
-            "expected_output": {
-                "subject": "Invoice for July Services",
-                "sender": "billing@example.com",
-                "body": "Dear Customer, please find attached the invoice for services rendered in July. Thank you for your business.",
-                "attachments": ["invoice_july.pdf"]
-            }
-        },
-        {
-            "inputs": { "sender": "person1@client.com" },
-            "expected_output": {
-                "subject": "Meeting Request",
-                "sender": "person1@client.com",
-                "body": "Hi, can we schedule a meeting some time next week? I am available on Monday and Wednesday."
-            }
-        }
-    ]
 
     output_type = "string"
 
@@ -52,10 +36,10 @@ class EmailReader(Tool):
             f"Subject: {email['subject']}\n"
             f"Body: {email['body']}\n"
         )
-
+    
     
     def forward(self, mode: str, index: int = 0) -> str: 
-        emails = mockData.get_dummy_templates    # grabs the mock data 
+        emails = mockData.get_dummy_templates()    # grabs the mock data 
 
         if not emails:                  
             return "inbox is empty" 
@@ -74,6 +58,6 @@ class EmailReader(Tool):
             if 0 <= index < len(emails):
                 return self.format_email(emails[index], index)
             else: 
-                return f"Invalid index. Please choose betwen 0 and {len(emails) - 1}."
+                return f"Invalid index. Please choose between 0 and {len(emails) - 1}."
         else: 
-            return "invalid mode. Choose 'all', 'latest', or specific'."
+            return "Invalid mode. Choose 'all', 'latest', or 'specific'."
