@@ -1,0 +1,28 @@
+"""
+Tool: EmailSender
+Purpose: writes and sends email on behalf of the user 
+"""
+from smolagents.tools import Tool
+import app.sample_data.mock_data as mockData
+
+class EmailSender(): 
+    name = "send_email"
+    description ={
+        "After reading and writing an email,"
+        "this tool will finalize the email"
+        "this tool will send an email with a subject and message to the recipient's email address."
+    }
+    #need inputs for recipient email, subject, and message
+    inputs = {}
+
+    output_type = "string"
+
+    def forward(self, recipient_email: str, subject: str, message: str) -> str:
+        if not recipient_email or not subject or not message:
+            return "Recipient email, subject, and message cannot be empty."
+        try:
+            # Here you would add the actual email sending logic
+            # For now, we just simulate success
+            return f"Email sent successfully to {recipient_email}"
+        except Exception as e:
+            return f"Failed to send email: {str(e)}"
