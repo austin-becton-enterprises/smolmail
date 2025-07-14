@@ -3,9 +3,10 @@ Tool: EmailReader
 Purpose: Parses and understands emails from an inbox
 """
 from smolagents.tools import Tool
-import app.sample_data.mock_data as mockData
+from app.sample_data import mock_data as mockData
 
-class EmailReader(Tool):
+
+class EmailReader():
     name = "read_email"
     description = {
         "Parses and returns email from specified inbox. "
@@ -32,7 +33,7 @@ class EmailReader(Tool):
         header = f"Email {idx}" if idx is not None else ""      # idx = index of the email, if none then skipped
         return (
             f"{header}\n"
-            f"From: {email['sender']}\n"
+            f"From: {email['email']}\n"
             f"Subject: {email['subject']}\n"
             f"Body: {email['body']}\n"
         )
