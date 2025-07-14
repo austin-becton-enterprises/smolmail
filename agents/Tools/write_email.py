@@ -32,8 +32,12 @@ class EmailWriter(Tool):
             raise ValueError("Prompt cannot be empty.")
 
         system_message = (
+            #"You are an assistant that writes professional, clear, and polite email drafts "
+            #"based on a short description. Return the email as a JSON object with keys: recipient, subject, body."
             "You are an assistant that writes professional, clear, and polite email drafts "
-            "based on a short description. Return the email as a JSON object with keys: recipient, subject, body."
+            "based on a short description. Return the email as a JSON object with keys: recipient, subject, body. "
+            "Use 'Becton Enterprises' as the sender's name when closing the email."
+
         )
 
         response = client.chat.completions.create(

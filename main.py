@@ -1,5 +1,5 @@
-from gmail import API
-import pprint
+#from gmail import API
+#import pprint
 import agents.test_reader as readerTool
 from agents.Tools.write_email import EmailWriter
 from dotenv import load_dotenv
@@ -8,7 +8,7 @@ import os
 # load .env 
 load_dotenv()
 
-
+'''
 def test_authentication():
     gmail = API()
     assert gmail.is_authenticated(), "Authentication failed"
@@ -40,7 +40,7 @@ def test_send_email(gmail):
         pprint.pprint(response)
     else:
         print("⚠️ Skipped sending email.")
-
+'''
 
 def test_reader_tool():
     readerTool.start()
@@ -58,28 +58,28 @@ if __name__ == '__main__':
     #print("=== Gmail API Test Runner ===")
 
     # Step 1: Authenticate
-    gmail = test_authentication()
+    #gmail = test_authentication()
 
     # Step 2: List recent messages
-    messages = test_list_messages(gmail)
+    #messages = test_list_messages(gmail)
 
     # Step 3: Get the first message content
-    if messages:
-       test_get_message(gmail, messages[0]['id'])
-    else:
-       print("No messages found.")
+    #if messages:
+    #   test_get_message(gmail, messages[0]['id'])
+    #else:
+    #   print("No messages found.")
 
     # Step 4: Send a test email (optional)
-    test_send_email(gmail)
+    #test_send_email(gmail)
 
     # Step 5: test read email tool
-    test_reader_tool()
+    #test_reader_tool()
 
     # Step 6: test write email tool
     test_api_key()
 
     tool = EmailWriter()
-    prompt = "Email example@gmail.com about an upcoming appointment on Tuesday May 16th at 2:30pm"
+    prompt = "Email John at johnfk@gmail.com about an upcoming appointment on Tuesday May 16th at 2:30pm"
     output = tool.forward(prompt=prompt)
 
     print("\nGenerated email draft:\n")
