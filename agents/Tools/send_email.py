@@ -12,8 +12,13 @@ class EmailSender():
         "this tool will finalize the email"
         "this tool will send an email with a subject and message to the recipient's email address."
     }
-    #need inputs for recipient email, subject, and message
-    inputs = {}
+   
+    inputs = {
+        "recipient_email": "The email address to send the email to (e.g. john@example.com).",
+        "subject": "The subject line of the email (e.g. 'Meeting Reminder').",
+        "message": "The body of the email to be sent.",
+        "signature": "Optional: Signature to include at the end of the email (e.g. 'Best, Emma')."
+    }
 
     output_type = "string"
 
