@@ -1,7 +1,6 @@
-#from gmail import API
-#import pprint
+from gmail import API
+import pprint
 import tool_testing.test_reader_tool as readerTool
-#from tool_testing.test_reader_tool import start as run_email_reader_tests
 from agents.Tools.write_email import EmailWriter
 from dotenv import load_dotenv
 import os
@@ -9,7 +8,7 @@ import os
 # load .env 
 load_dotenv()
 
-'''
+
 def test_authentication():
     gmail = API()
     assert gmail.is_authenticated(), "Authentication failed"
@@ -41,49 +40,49 @@ def test_send_email(gmail):
         pprint.pprint(response)
     else:
         print("⚠️ Skipped sending email.")
-'''
+
 
 def test_reader_tool():
     readerTool.start()
 
 # testing write email OpenAI API KEY
-#def test_api_key():
-#    api_key = os.getenv("OPENAI_API_KEY")
-#    if api_key:
-#        print("OpenAI API key loaded sucessfully.")
-#    else:
-#        print("Failed to load OpenAI API key.")
+def test_api_key():
+    api_key = os.getenv("OPENAI_API_KEY")
+    if api_key:
+        print("OpenAI API key loaded sucessfully.")
+    else:
+        print("Failed to load OpenAI API key.")
 
 
 if __name__ == '__main__':
-    #print("=== Gmail API Test Runner ===")
+    print("=== Gmail API Test Runner ===")
 
     # Step 1: Authenticate
-    #gmail = test_authentication()
+    gmail = test_authentication()
 
     # Step 2: List recent messages
-    #messages = test_list_messages(gmail)
+    messages = test_list_messages(gmail)
 
     # Step 3: Get the first message content
-    #if messages:
-    #   test_get_message(gmail, messages[0]['id'])
-    #else:
-    #   print("No messages found.")
+    if messages:
+       test_get_message(gmail, messages[0]['id'])
+    else:
+       print("No messages found.")
 
     # Step 4: Send a test email (optional)
-    #test_send_email(gmail)
+    test_send_email(gmail)
 
     # Step 5: test read email tool
     print("Running EmailReader tool tests...\n")
     test_reader_tool()
 
     # Step 6: test write email tool
-    #test_api_key()
+    test_api_key()
 
-    #tool = EmailWriter()
-    #prompt = "Email John at johnfk@gmail.com about an upcoming appointment on Tuesday May 16th at 2:30pm"
-    #output = tool.forward(prompt=prompt)
+    tool = EmailWriter()
+    prompt = "Email John at johnfk@gmail.com about an upcoming appointment on Tuesday May 16th at 2:30pm"
+    output = tool.forward(prompt=prompt)
 
-    #print("\nGenerated email draft:\n")
-    #print(output)
+    print("\nGenerated email draft:\n")
+    print(output)
 
