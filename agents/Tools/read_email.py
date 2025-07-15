@@ -6,13 +6,13 @@ from smolagents.tools import Tool
 from app.sample_data import mock_data as mockData
 
 
-class EmailReader():
+class EmailReader(Tool):
     name = "read_email"
-    description = {
+    description = (
         "Parses and returns email from specified inbox. "
         "Supports retrieving all emails, the latest email, or a specific email by index. "
         "Returns the sender, object, and body content of the email. "
-    }
+    )
     inputs = {
         "mode": {
             "type": "string",
@@ -22,7 +22,8 @@ class EmailReader():
         "index": {
             "type": "integer",
             "description": "The index of the specific email to read (used only when mode is 'specific').",
-            "default": 0
+            "default": 0,
+            "nullable": True
         }
     }
 
@@ -40,7 +41,7 @@ class EmailReader():
     
     
     def forward(self, mode: str, index: int = 0) -> str: 
-        emails = mockData.get_dummy_templates()    # grabs the mock data 
+        emails = mockData.get_dummy_emails()    # grabs the mock data 
 
         if not emails:                  
             return "inbox is empty" 
