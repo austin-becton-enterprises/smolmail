@@ -4,6 +4,7 @@ Purpose: Retrieves and manages message templates for consistent and structured A
 """
 from smolagents.tools import Tool
 import app.sample_data.mock_data as mockData
+from agents.Tools.logger_tool import ToolLogger
 
 class TemplateManager(Tool):
     """

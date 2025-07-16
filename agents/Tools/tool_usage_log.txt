@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-07-16T18:58:29.341456",
+  "tool_name": "template_manager",
+  "inputs": {
+    "mode": "get",
+    "template_id": 101
+  },
+  "output": "Subject: Welcome to Our Service\nBody: Hi {name}, welcome to our service!",
+  "summary": "Fetched welcome email template"
+}
