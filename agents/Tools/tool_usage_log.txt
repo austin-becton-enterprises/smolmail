@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-07-16T18:58:29.341456",
+  "tool_name": "template_manager",
+  "inputs": {
+    "mode": "get",
+    "template_id": 101
+  },
+  "output": "Subject: Welcome to Our Service\nBody: Hi {name}, welcome to our service!",
+  "summary": "Fetched welcome email template"
+}
+{
+  "timestamp": "2025-07-17T15:01:34.873897",
+  "tool_name": "manage_templates",
+  "inputs": {
+    "action": "create",
+    "template_name": "Welcome"
+  },
+  "output": "Template created",
+  "summary": "Created a welcome email template"
+}
+2025-07-17 11:01:34,874 - INFO - Tool: manage_templates | Inputs: {'action': 'create', 'template_name': 'Welcome'} | Output: Template created | Summary: Created a welcome email template

@@ -1,6 +1,7 @@
 from agents.Tools.manage_templates import TemplateManager
 from app.sample_data import mock_data as mockData
 
+
 # Instantiate the TemplateManager tool
 template_manager = TemplateManager()
 
