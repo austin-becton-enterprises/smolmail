@@ -1,17 +1,18 @@
 """
 Tool: ToolLogger
-Purpose: Logs tool usage events for debugging and traceability.
+Purpose: Logs tool usage events for debugging and traceability using both JSON format and rotating log file.
 """
 
-import json
 import os
+import json
+import logging
 from datetime import datetime
+from logging.handlers import RotatingFileHandler
 from smolagents.tools import Tool
 
 class ToolLogger(Tool):
     """
-    Logs which tools were used, with inputs, timestamps, and optionally outputs.
-    For now, logs are saved to a local 'tool_usage_log.txt' file in the same folder as the script.
+    Logs tool usage in both human-readable format and structured JSON.
     """
 
     name = "tool_logger"
@@ -45,20 +46,44 @@ class ToolLogger(Tool):
 
     output_type = "string"
 
+    def __init__(self):
+        super().__init__()
+        self.logger = self.setup_logger()
+
+    def setup_logger(self):
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        log_path = os.path.join(current_dir, "tool_usage_log.txt")
+
+        logger = logging.getLogger("ToolLogger")
+        logger.setLevel(logging.INFO)
+
+        if not logger.handlers:  # Avoid adding multiple handlers
+            handler = RotatingFileHandler(log_path, maxBytes=5 * 1024 * 1024, backupCount=3)
+            formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+
+        return logger
+
     def forward(self, tool_name: str, inputs: dict, output: str = None, summary: str = None) -> str:
+        timestamp = datetime.utcnow().isoformat()
+
         log_entry = {
-            "timestamp": datetime.utcnow().isoformat(),
+            "timestamp": timestamp,
             "tool_name": tool_name,
             "inputs": inputs,
             "output": output,
             "summary": summary
         }
 
-        # Ensure the log file is saved in the same directory as this script
+        # JSON-style log (pretty printed)
         current_dir = os.path.dirname(os.path.abspath(__file__))
         log_path = os.path.join(current_dir, "tool_usage_log.txt")
-
         with open(log_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(log_entry, indent=2) + "\n")
+
+        # Rotating file log
+        message = f"Tool: {tool_name} | Inputs: {inputs} | Output: {output} | Summary: {summary}"
+        self.logger.info(message)
 
         return "Log entry created."
