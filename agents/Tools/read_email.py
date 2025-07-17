@@ -3,15 +3,16 @@ Tool: EmailReader
 Purpose: Parses and understands emails from an inbox
 """
 from smolagents.tools import Tool
-import app.sample_data.mock_data as mockData
+from app.sample_data import mock_data as mockData
+
 
 class EmailReader(Tool):
     name = "read_email"
-    description = {
+    description = (
         "Parses and returns email from specified inbox. "
         "Supports retrieving all emails, the latest email, or a specific email by index. "
         "Returns the sender, object, and body content of the email. "
-    }
+    )
     inputs = {
         "mode": {
             "type": "string",
@@ -21,7 +22,8 @@ class EmailReader(Tool):
         "index": {
             "type": "integer",
             "description": "The index of the specific email to read (used only when mode is 'specific').",
-            "default": 0
+            "default": 0,
+            "nullable": True
         }
     }
 
@@ -32,14 +34,14 @@ class EmailReader(Tool):
         header = f"Email {idx}" if idx is not None else ""      # idx = index of the email, if none then skipped
         return (
             f"{header}\n"
-            f"From: {email['sender']}\n"
+            f"From: {email['email']}\n"
             f"Subject: {email['subject']}\n"
             f"Body: {email['body']}\n"
         )
     
     
     def forward(self, mode: str, index: int = 0) -> str: 
-        emails = mockData.get_dummy_templates()    # grabs the mock data 
+        emails = mockData.get_dummy_emails()    # grabs the mock data 
 
         if not emails:                  
             return "inbox is empty" 
