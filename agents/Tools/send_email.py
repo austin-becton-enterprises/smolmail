@@ -11,3 +11,4 @@ class EmailSender():
 
     def forward(): 
         return 0
+    

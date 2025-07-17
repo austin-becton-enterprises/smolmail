@@ -1,13 +1,11 @@
 from gmail import API
 import pprint
 import tool_testing.test_reader_tool as readerTool
-from agents.Tools.write_email import EmailWriter
+from tool_testing.test_write_tool import generate_email_from_prompt
 from dotenv import load_dotenv
 import os
 
-# load .env 
-load_dotenv()
-
+load_dotenv()   # load .env 
 
 def test_authentication():
     gmail = API()
@@ -45,6 +43,7 @@ def test_send_email(gmail):
 def test_reader_tool():
     readerTool.start()
 
+
 # testing write email OpenAI API KEY
 def test_api_key():
     api_key = os.getenv("OPENAI_API_KEY")
@@ -52,6 +51,16 @@ def test_api_key():
         print("OpenAI API key loaded sucessfully.")
     else:
         print("Failed to load OpenAI API key.")
+
+def test_write_tool():
+    prompt = "Email John at johnfk@gmail.com about an upcoming appointment on Tuesday May 16th at 2:30pm"
+
+    try:
+        output = generate_email_from_prompt(prompt)
+        print("\nGenerated email draft:\n")
+        print(output)
+    except Exception as e:
+        print(f"Failed to generate email: {e}")
 
 
 if __name__ == '__main__':
@@ -78,11 +87,6 @@ if __name__ == '__main__':
 
     # Step 6: test write email tool
     test_api_key()
+    test_write_tool()
 
-    tool = EmailWriter()
-    prompt = "Email John at johnfk@gmail.com about an upcoming appointment on Tuesday May 16th at 2:30pm"
-    output = tool.forward(prompt=prompt)
-
-    print("\nGenerated email draft:\n")
-    print(output)
 
