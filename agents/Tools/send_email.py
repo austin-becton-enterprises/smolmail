@@ -16,8 +16,7 @@ class EmailSender():
     inputs = {
         "recipient_email": "The email address to send the email to (e.g. john@example.com).",
         "subject": "The subject line of the email (e.g. 'Meeting Reminder').",
-        "message": "The body of the email to be sent.",
-        "signature": "Optional: Signature to include at the end of the email (e.g. 'Best, Emma')."
+        "message": "The body of the email to be sent."
     }
 
     output_type = "string"
