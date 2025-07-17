@@ -6,13 +6,7 @@ class ClientSearchAgent:
         self.tool = ClientSearchTool(dummy_clients)
 
     def get_client_info(self, query):
-        return self.tool.forward(query)
-
-# Run test
-if __name__ == "__main__":
-    agent = ClientSearchAgent()
-    print(agent.get_client_info({"id": "101"}))
-    print(agent.get_client_info({"email": "bob@example.com"}))
-    print(agent.get_client_info({"role": "CTO"}))
-    print(agent.get_client_info({"id": "999"}))
-    print(agent.get_client_info({}))
+        result = self.tool.forward(query)
+        if result["status"] =="success": 
+            return result["prompt"]
+        return result("message")
