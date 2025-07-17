@@ -815,3 +815,25 @@ Traceback (most recent call last):
     print(f"- From: {email['sender']}")
                      ~~~~~^^^^^^^^^^
 KeyError: 'sender'
+2025-07-17 11:15:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-17 11:15:30 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-07-17 11:15:30 - INFO - Fetching unread messages...
+2025-07-17 11:15:30 - INFO - Fetching unread messages...
+2025-07-17 11:15:31 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-17 11:15:31 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-17 11:15:31 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-17 11:15:31 - INFO - Read message: Subject='Security alert', From='Google <no-reply@accounts.google.com>'
+2025-07-17 11:15:31 - INFO - Retrieved 2 unread emails.
+2025-07-17 11:15:31 - INFO - Retrieved 2 unread emails.
+2025-07-17 11:15:31 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "C:\Users\simra\OneDrive - MSFT\Desktop\BecGitHub\smolmail\main_service.py", line 23, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
+2025-07-17 11:15:31 - ERROR - Error reading emails: 'sender'
+Traceback (most recent call last):
+  File "C:\Users\simra\OneDrive - MSFT\Desktop\BecGitHub\smolmail\main_service.py", line 23, in test_read_email
+    print(f"- From: {email['sender']}")
+                     ~~~~~^^^^^^^^^^
+KeyError: 'sender'
