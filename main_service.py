@@ -29,7 +29,7 @@ def test_read_email(gmail_service):
                     gmail_service,
                     to=email['From'],
                     id=email['id'],
-                    snippet=email
+                    snippet=email['snippet']
                 )
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)

@@ -31,4 +31,3 @@ class MailAgent:
 
         Reply ONLY with the content of the email. Do NOT include any explanations or disclaimers.
         """
-        return self.agent.run(prompt)
