@@ -3,7 +3,8 @@ from email_reply import general_email_reply, ai_email_reply
 from Firestore.firestore_main import firestoremain
 
 # main_tools.py
-
+from app.core.mail_agent import MailAgent
+from app.core.mail_agent import MailAgent
 from app.core.gmail_api import API
 from app.core.gmail_facade import GmailService
 from app.utils.log_config import setup_logger
@@ -25,12 +26,17 @@ def test_read_email(gmail_service):
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
-                test_send_email(gmail_service, email['From'], email['id'])
+                test_send_email(
+                    gmail_service,
+                    to=email['From'],
+                    id=email['id'],
+                    snippet=email['snippet']
+                )
     except Exception as e:
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
 
-def test_send_email(gmail_service, to=None, id=None):
+def test_send_email(gmail_service, to=None, id=None,snippet):
     try:
         # Prompt for email address to send a test message if not provided
         if not to:
@@ -62,7 +68,6 @@ def test_send_email(gmail_service, to=None, id=None):
     except Exception as e:
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
-
 def main():
     while True:
         print("\n=== Select Application ===")
