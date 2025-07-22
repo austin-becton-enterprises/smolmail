@@ -53,3 +53,22 @@ def get_dummy_templates() -> list[dict]:
             "body": "Hello {name}, thanks for getting in touch with us!"
         }
     ]
+
+def get_dummy_emails() -> list[dict]:
+    return[
+        {
+            "email": "alice@example.com",
+            "subject": "Meeting Tomorrow",
+            "body": "Hi, just a reminder about our meeting tomorrow at 10am."
+        },
+        {
+            "email": "bob@example.com",
+            "subject": "Follow-up",
+            "body": "Can you send me the files we discussed?"
+        },
+        {
+            "email": "cathy@example.com",
+            "subject": "Weekend Plans",
+            "body": "Are we still on for hiking this weekend?"
+        }
+    ]
