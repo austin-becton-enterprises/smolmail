@@ -4,6 +4,7 @@ Purpose: Retrieves and manages message templates for consistent and structured A
 """
 from smolagents.tools import Tool
 import app.sample_data.mock_data as mockData
+from app.core.gmail_api import API
 
 class TemplateManager(Tool):
     """
@@ -38,6 +39,11 @@ class TemplateManager(Tool):
     }
 
     output_type = "string"
+   
+    def __init__(self):
+        super().__init__()
+        self.api = API()
+
 
     def format_template_content(self, template: dict) -> str:
         """Helper method to format a single template's content into a readable string."""

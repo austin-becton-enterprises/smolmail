@@ -6,34 +6,6 @@ cred = credentials.Certificate("./firestore_credentials.json")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
-
-clients = [
-    {
-        "client_id": "client_001",
-        "client_name": "Alpha Corp",
-        "client_address": "123 Alpha Street, New York",
-        "client_phno": "+1-555-1111",
-        "client_email": "info@alphacorp.com",
-        "client_zipcode": "10001"
-    },
-    {
-        "client_id": "client_002",
-        "client_name": "Beta Solutions",
-        "client_address": "789 Innovation Ave, Silicon Valley",
-        "client_phno": "+1-555-2233",
-        "client_email": "contact@betasolutions.com",
-        "client_zipcode": "94301"
-    },
-    {
-        "client_id": "client_003",
-        "client_name": "Green Leaf Inc.",
-        "client_address": "321 Eco St, Portland",
-        "client_phno": "+1-555-7777",
-        "client_email": "support@greenleaf.com",
-        "client_zipcode": "97201"
-    }
-]
-
 for client in clients:
     db.collection("clients").document(client["client_id"]).set(client)
     print("Inserted client:", client["client_id"])

@@ -4,7 +4,7 @@ Purpose: Parses and understands emails from an inbox
 """
 from smolagents.tools import Tool
 from app.sample_data import mock_data as mockData
-
+from app.core.gmail_api import API
 
 class EmailReader(Tool):
     name = "read_email"
@@ -28,6 +28,9 @@ class EmailReader(Tool):
     }
 
     output_type = "string"
+    def __init__(self):
+        super().__init__()
+        self.api = API()
 
     # helper method that takes in a single email (as a dictionary) and returns a nicely formatted string.
     def format_email(self, email: dict, idx: int = None) -> str:

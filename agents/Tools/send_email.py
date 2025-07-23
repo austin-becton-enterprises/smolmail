@@ -4,6 +4,7 @@ Purpose: writes and sends email on behalf of the user
 """
 from smolagents.tools import Tool
 import app.sample_data.mock_data as mockData
+from app.core.gmail_api import API
 
 class EmailSender(): 
     name = "send_email"
@@ -21,6 +22,9 @@ class EmailSender():
     }
 
     output_type = "string"
+    def __init__(self):
+        super().__init__()
+        self.api = API()
 
     def forward(self, recipient_email: str, subject: str, message: str) -> str:
         if not recipient_email or not subject or not message:

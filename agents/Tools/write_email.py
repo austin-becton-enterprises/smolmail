@@ -1,6 +1,7 @@
 # Purpose: Write fresh email on behalf of user  
 
 from smolagents.tools import Tool
+from app.core.gmail_api import API
 
 class EmailWriter(Tool):
     name = "write_email"
@@ -19,6 +20,9 @@ class EmailWriter(Tool):
     }
 
     output_type = "object" 
+    def __init__(self):
+        super().__init__()
+        self.api = API()
     
     def forward(self, prompt: str = "") -> dict:
         from tool_testing.test_write_tool import generate_email_from_prompt
