@@ -46,7 +46,7 @@ class OpenAIModel:
             # Extract the assistant's reply text
             assistant_reply_text = response.choices[0].message.content
 
-            # *** THIS IS THE CRUCIAL CHANGE ***
+            
             # Return a ChatMessage object with the role and content
             return ChatMessage(role="assistant", content=assistant_reply_text)
 
