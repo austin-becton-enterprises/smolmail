@@ -1,29 +1,40 @@
-# main.py
+from agents.email_agent import EmailAgent
+from agents.Tools.logger_tool import ToolLogger
+from agents.Tools.manage_templates import TemplateManager
+from agents.Tools.read_email import EmailReader
+from agents.Tools.write_email import EmailWriter
+from agents.Tools.send_email import EmailSender
 
-from agents import EmailAgent
-from agents.Tools.logger_tool import LoggerTool
-from agents.Tools.manage_templates import ManageTemplates
-from agents.Tools.read_email import ReadEmail
-from agents.Tools.send_email import SendEmail
-from agents.Tools.write_email import WriteEmail
+from openai_model import OpenAIModel  #custom model wrapper class
+from openai_config import setup_openai  #Import the config
+
 
 def main():
-    # Instantiate each tool
+    print("Setting up OpenAI API...")
+    setup_openai()  # Initialize OpenAI key
+
+    print("Starting EmailAgent with tools...")
     tools = [
-        LoggerTool(),
-        ManageTemplates(),
-        ReadEmail(),
-        SendEmail(),
-        WriteEmail(),
+        ToolLogger(),
+        TemplateManager(),
+        EmailReader(),
+        EmailWriter(),
+        EmailSender(),
     ]
 
-    # Create the agent with the tools
-    agent = EmailAgent(tools=tools)
+    
+    model = OpenAIModel(model_name="gpt-4o")  
 
-    # Example test input (you can modify this)
-    user_input = "Send an email to simran@example.com with subject 'Hello' and body 'How are you?'"
-    response = agent.run(user_input)
-    print(response)
+    agent = EmailAgent(tools=tools, model=model)
+
+    while True:
+        user_input = input("Ask the agent something (or type 'exit'): ")
+        if user_input.lower() in ["exit", "quit"]:
+            break
+
+        response = agent.run(user_input)
+        print("Response:", response)
+        print()
 
 if __name__ == "__main__":
     main()
