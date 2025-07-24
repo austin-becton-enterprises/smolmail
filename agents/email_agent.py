@@ -1,5 +1,3 @@
-# agents/agent.py
-
 from smolagents.agents import BaseAgent
 
 class EmailAgent(BaseAgent):

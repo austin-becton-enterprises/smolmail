@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from agents.Tools.email_agent import EmailAgent
+from smolmail.agents.email_agent import EmailAgent
 
 def test_email_agent():
     agent = EmailAgent()

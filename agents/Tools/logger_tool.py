@@ -9,7 +9,7 @@ import logging
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from smolagents.tools import Tool
-
+from app.core.gmail_api import API
 class ToolLogger(Tool):
     """
     Logs tool usage in both human-readable format and structured JSON.
@@ -45,7 +45,11 @@ class ToolLogger(Tool):
     }
 
     output_type = "string"
-
+    
+    def __init__(self):
+        super().__init__()
+        self.api = API()
+        
     def __init__(self):
         super().__init__()
         self.logger = self.setup_logger()
