@@ -1,5 +1,6 @@
 from gmail import API
 import pprint
+from smolmail.agents.Tools.send_email import EmailSender
 import tool_testing.test_reader_tool as readerTool
 from agents.Tools.write_email import EmailWriter
 from dotenv import load_dotenv
@@ -72,6 +73,8 @@ if __name__ == '__main__':
     # Step 4: Send a test email (optional)
     test_send_email(gmail)
 
+    tool = EmailSender()
+
     # Step 5: test read email tool
     print("Running EmailReader tool tests...\n")
     test_reader_tool()
@@ -86,3 +89,4 @@ if __name__ == '__main__':
     print("\nGenerated email draft:\n")
     print(output)
 
+    
