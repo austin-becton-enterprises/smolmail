@@ -4,10 +4,10 @@ from Firestore.firestore_main import firestoremain
 
 # main_tools.py
 from app.core.mail_agent import MailAgent
-from app.core.mail_agent import MailAgent
 from app.core.gmail_api import API
 from app.core.gmail_facade import GmailService
 from app.utils.log_config import setup_logger
+import time
 
 logger = setup_logger()
 
@@ -36,35 +36,26 @@ def test_read_email(gmail_service):
         logger.error(f"Error reading emails: {e}", exc_info=True)
         print(f"Error reading emails: {e}")
 
-def test_send_email(gmail_service, to=None, id=None,snippet):
+def test_send_email(gmail_service,to,id,snippet):
     try:
-        # Prompt for email address to send a test message if not provided
-        if not to:
-            to = input("Enter email address to send a test email: ").strip()
-
-        # Inputs
-        name = input("Enter recipient name (optional): ").strip() or None
-        issue = input("Enter issue (optional): ").strip() or None
-        additional_info = input("Any additional info (optional): ").strip() or None
-
-        # Generate body using email_template
-        body = general_email_reply(name=name, issue=issue, additional_info=additional_info)
-        subject = f"Re: {issue or 'Support Request'}"
-
-        confirmation = input(f"Send email to {to}? \n\n{body}\n\n(y/n): ").strip().lower()
-        if confirmation == 'y':
-            result = gmail_service.send_email(to, subject, body)
-            if result:
-                logger.info(f"Email sent successfully to {to}.")
-                if id:
-                    gmail_service.mark_as_read(id)
-                print("Email sent successfully.")
-            else:
-                logger.error(f"Email failed to send to {to}.")
-                print("Email failed to send.")
+        agent = MailAgent()
+        result = agent.run({"snippet": snippet})
+        subject = "Reply from AI Assistant"
+        body = result  # Set AI result as the email body
+        logger.info(f"AI Response: {result}")
+        # confirmation = input(f"Send email to {to}? (y/n): ").strip().lower()
+        # if confirmation == 'y':
+        result = gmail_service.send_email(to, subject, body)
+        if result:
+            logger.info(f"Email sent successfully to {to}.")
+            gmail_service.mark_as_read(id)
+            print("Email sent successfully.")
         else:
-            logger.info("Email send cancelled by user.")
-            print("⚠️ Email send cancelled.")
+            logger.error(f"Email failed to send to {to}.")
+            print("Email failed to send.")
+        # else:
+            # logger.info("Email send cancelled by user.")
+            # print("⚠️ Email send cancelled.")
     except Exception as e:
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
@@ -76,7 +67,6 @@ def main():
         print("0. Exit")
 
         y = input("Enter option [1/2/0]: ").strip()
-
         if y == '1':
             print("=== Gmail Tools Test Runner ===")
             gmail = API()
