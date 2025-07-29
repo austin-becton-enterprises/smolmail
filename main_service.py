@@ -1,5 +1,6 @@
 # Testing email_reply
 from email_reply import general_email_reply, ai_email_reply
+from Firestore.firestore_main import firestoremain
 
 # main_tools.py
 from app.core.mail_agent import MailAgent
@@ -21,7 +22,7 @@ def test_read_email(gmail_service):
             logger.info(f"Retrieved {len(emails)} unread emails.")
             print(f"Retrieved {len(emails)} unread emails:")
             for email in emails:
-                print(f"- From: {email['sender']}")
+                print(f"- From: {email['From']}")
                 print(f"  Subject: {email['subject']}")
                 print(f"  Snippet: {email['snippet']}")
                 print("---")
@@ -58,14 +59,26 @@ def test_send_email(gmail_service,to,id,snippet):
     except Exception as e:
         logger.error(f"Error sending email: {e}", exc_info=True)
         print(f"Error sending email: {e}")
+def main():
+    while True:
+        print("\n=== Select Application ===")
+        print("1. Gmail Tools")
+        print("2. Firestore App")
+        print("0. Exit")
+
+        y = input("Enter option [1/2/0]: ").strip()
+        if y == '1':
+            print("=== Gmail Tools Test Runner ===")
+            gmail = API()
+            gmail_service = GmailService(gmail.service)
+            test_read_email(gmail_service)
+        elif y == '2':
+            firestoremain()
+        elif y == '0':
+            print("Goodbye!")
+            break
+        else:
+            print("❌ Invalid input. Please enter 1, 2, or 0.")
 
 if __name__ == '__main__':
-    print("=== Gmail Tools Test Runner ===")
-    # Authenticate and build the service
-    gmail = API()
-    gmail_service = GmailService(gmail.service)
-
-    # Run tests
-    while True:
-        test_read_email(gmail_service)
-        time.sleep(5)  # Wait 5 seconds before checking again
+    main()
