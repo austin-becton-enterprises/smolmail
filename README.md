@@ -174,8 +174,38 @@ pip install -r requirements.txt
 
 ---
 
+## OpenAI API Key Setup
+
+Follow these steps to securely set up and use your OpenAI API key across the team.
+
+### 1. Create a `.env` File
+
+At the root of the project, create a file named `.env` and add your personal OpenAI API key:
+
+```.env
+OPENAI_API_KEY=your-openai-api-key-here
+```
+
+
+**Note**: `.env` is already added to `.gitignore`, so it should NOT be committed to the repository. Each developer must create their own local `.env` file.
+
+---
+
+### 2. Install `python-dotenv` Dependency
+
+Install the `python-dotenv` package to load environment variables from your `.env` file automatically:
+
+```bash
+pip install python-dotenv
+```
+---
+
 ## Resources
 
 - https://developers.google.com/workspace/gmail/api/quickstart/python  
 - https://github.com/googleapis/google-api-python-client  
 - https://developers.google.com/identity/protocols/oauth2 
+
+
+## Testing
+- python -m unittest app.tests.test_unit_gmail

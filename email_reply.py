@@ -1,11 +1,21 @@
 from gmail_service import send_email
-from log_config import setup_logger
+#from log_config import setup_logger
 
 #Initialize loger 
-logger = setup_logger
+#logger = setup_logger
 
 #General automated response email reply template
-def general_email_reply(name=str|None, issue=str|None, additional_info=str|None, sender_name=str|"Support Team", company_name=str|"Company") -> str:
+def general_email_reply(
+    name: str | None = None,
+    issue: str | None = None,
+    additional_info: str | None = None,
+    sender_name: str | None = None,
+    company_name: str | None = None,) -> str:   
+
+    ##Customize later on 
+    sender_name = "Support team"
+    company_name = "Becton Enterprises"
+ 
     greeting = f"Hello {name}," if name else "Hello,"
     body = (
         f"{greeting}\n\n"
@@ -28,13 +38,19 @@ def general_email_reply(name=str|None, issue=str|None, additional_info=str|None,
         "If you have any more questions or details to share, please feel free to reply to this email.\n\n"
         "Best regards,\n"
         f"{sender_name}\n"
-        f"{company_name}"
+        f"{company_name or ''}"
+
     )
 
     return body
 
 #AI agent response email template 
-def ai_email_reply( name= str|None, ai_response= str|None, sender_name="Support"|str, company_name=str|"Company") -> str:
+def ai_email_reply(
+    name: str | None = None,
+    ai_response: str | None = None,
+    sender_name: str | None = None,
+    company_name: str | None = None) -> str:    
+
     greeting = f"Hello {name}," if name else "Hello,"
     body = (
         f"{greeting}\n\n"
@@ -50,7 +66,8 @@ def ai_email_reply( name= str|None, ai_response= str|None, sender_name="Support"
         "If you have further questions or need further assistance, please feel free to reply to this message.\n\n"
         "Best regards,\n"
         f"{sender_name}\n"
-        f"{company_name}"
+        f"{company_name or ''}"
+
     )
 
     return body
